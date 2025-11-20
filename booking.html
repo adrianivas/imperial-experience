@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking | Imperial Experience</title>
+    <meta name="description" content="Complete your booking with Imperial Experience. Securely pay for tours and tickets via credit card and receive instant confirmation." />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTcI3eWh4V2pwODe6acN9XZSy1F9HmHBA60xE9o3uV8Odx2bX8p7RB9Fjbj6yP/3o3qQpD4jIYAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
+    <!-- Load PayPal JS SDK for demonstration; uses sandbox client id 'sb' -->
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=EUR"></script>
+</head>
+<body class="font-sans text-gray-800" x-data="bookingPage()">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600">Imperial Experience</a>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+                <li><a href="about.html" class="hover:text-indigo-600">About</a></li>
+                <li><a href="tours.html" class="hover:text-indigo-600">Tours</a></li>
+                <li><a href="tickets.html" class="hover:text-indigo-600">Tickets</a></li>
+                <li><a href="contact.html" class="hover:text-indigo-600">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Booking Header -->
+    <section class="pt-24 md:pt-32 bg-gray-100 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Complete Your Booking</h1>
+            <p class="max-w-2xl mx-auto text-gray-600">Provide your details and proceed to payment.</p>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8 max-w-2xl">
+            <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-4" x-text="product.title">Booking</h2>
+                <p class="text-gray-700 mb-2" x-text="product.description"></p>
+                <p class="text-gray-600 mb-6">Price per person: <span class="text-indigo-600 font-semibold" x-text="formatCurrency(product.price)"></span></p>
+                <form @submit.prevent="createOrder">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="name" x-model="form.name" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 mb-1">Email</label>
+                        <input type="email" id="email" x-model="form.email" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="date" class="block text-gray-700 mb-1">Preferred Date</label>
+                        <input type="date" id="date" x-model="form.date" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="guests" class="block text-gray-700 mb-1">Number of Guests</label>
+                        <input type="number" id="guests" x-model.number="form.guests" min="1" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                    </div>
+                    <div class="mb-6">
+                        <label for="notes" class="block text-gray-700 mb-1">Notes (optional)</label>
+                        <textarea id="notes" x-model="form.notes" rows="3" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                    </div>
+                    <!-- Hidden fields to capture product -->
+                    <input type="hidden" name="product" :value="product.id">
+                    <!-- PayPal button container -->
+                    <div id="paypal-button-container"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="container mx-auto px-4 text-center">
+            © 2025 Imperial Experience. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+    function bookingPage() {
+        return {
+            product: { id: '', title: '', description: '', price: 0 },
+            form: { name: '', email: '', date: '', guests: 1, notes: '' },
+            formatCurrency(amount) { return '€' + amount.toFixed(2); },
+            init() {
+                // Define mapping of tours/tickets to details
+                const params = new URLSearchParams(window.location.search);
+                const tour = params.get('tour');
+                const ticket = params.get('ticket');
+                const products = {
+                    vatican: { id: 'vatican', title: 'Vatican & Sistine Chapel Tour', description: 'Guided tour of Vatican Museums, Sistine Chapel, and St. Peter\'s Basilica.', price: 99 },
+                    colosseum: { id: 'colosseum', title: 'Colosseum & Ancient Rome Tour', description: 'Guided tour of the Colosseum, Roman Forum, and Palatine Hill.', price: 85 },
+                    city: { id: 'city', title: 'Rome City Highlights', description: 'Walking tour covering Rome\'s iconic highlights.', price: 75 },
+                    tuscany: { id: 'tuscany', title: 'Tuscany Day Trip', description: 'Day trip to Tuscany with wine tasting and scenic stops.', price: 150 },
+                    // Tickets
+                    vaticanticket: { id: 'vaticanticket', title: 'Vatican Museums Ticket', description: 'Skip-the-line ticket to Vatican Museums & Sistine Chapel.', price: 29 },
+                    colosseumticket: { id: 'colosseumticket', title: 'Colosseum Ticket', description: 'Priority entry to the Colosseum, Roman Forum, and Palatine Hill.', price: 24 },
+                    borghese: { id: 'borghese', title: 'Villa Borghese Gallery Ticket', description: 'Entry ticket to the Borghese Gallery.', price: 23 }
+                };
+                let key = '';
+                if (tour) {
+                    key = tour;
+                } else if (ticket) {
+                    // unify ticket keys: e.g. vatican -> vaticanticket or colosseum -> colosseumticket
+                    key = ticket + 'ticket';
+                }
+                this.product = products[key] || { id: 'custom', title: 'Custom Booking', description: 'Complete your booking details.', price: 0 };
+                // load PayPal button after product is set
+                this.loadPayPal();
+            },
+            loadPayPal() {
+                const self = this;
+                // Render PayPal button
+                paypal.Buttons({
+                    createOrder: function(data, actions) {
+                        // Setup the order
+                        return actions.order.create({
+                            purchase_units: [{
+                                amount: {
+                                    value: (self.product.price * self.form.guests).toFixed(2),
+                                    currency_code: 'EUR'
+                                },
+                                description: self.product.title
+                            }]
+                        });
+                    },
+                    onApprove: function(data, actions) {
+                        return actions.order.capture().then(function(details) {
+                            alert('Payment completed! Thank you, ' + details.payer.name.given_name + '. An email confirmation will be sent shortly.');
+                        });
+                    }
+                }).render('#paypal-button-container');
+            },
+            createOrder() {
+                // This function is intentionally left blank; PayPal button handles payment
+            }
+        }
+    }
+    </script>
+</body>
+</html>

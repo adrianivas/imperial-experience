@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Imperial Experience</title>
+    <meta name="description" content="Contact Imperial Experience for questions about tours, tickets, and bookings. We're here to help you plan your trip to Rome and Italy." />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTcI3eWh4V2pwODe6acN9XZSy1F9HmHBA60xE9o3uV8Odx2bX8p7RB9Fjbj6yP/3o3qQpD4jIYAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10" x-data="{ open: false }">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600">Imperial Experience</a>
+            <button class="md:hidden text-gray-700 focus:outline-none" @click="open = !open">
+                <i :class="open ? 'fas fa-times' : 'fas fa-bars'" class="text-2xl"></i>
+            </button>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+                <li><a href="about.html" class="hover:text-indigo-600">About</a></li>
+                <li><a href="tours.html" class="hover:text-indigo-600">Tours</a></li>
+                <li><a href="tickets.html" class="hover:text-indigo-600">Tickets</a></li>
+                <li><a href="contact.html" class="text-indigo-600 font-semibold">Contact</a></li>
+            </ul>
+        </div>
+        <div class="md:hidden" x-show="open">
+            <ul class="bg-white px-4 pt-2 pb-4 space-y-2 shadow-md">
+                <li><a href="index.html" class="block text-gray-700 hover:text-indigo-600">Home</a></li>
+                <li><a href="about.html" class="block text-gray-700 hover:text-indigo-600">About</a></li>
+                <li><a href="tours.html" class="block text-gray-700 hover:text-indigo-600">Tours</a></li>
+                <li><a href="tickets.html" class="block text-gray-700 hover:text-indigo-600">Tickets</a></li>
+                <li><a href="contact.html" class="block text-indigo-600 font-semibold">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 md:pt-32 bg-gray-100 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+            <p class="max-w-2xl mx-auto text-gray-600">Have questions about our tours or tickets? Get in touch and we'll be happy to help.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Details -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+                    <p class="text-gray-700 mb-4">We'd love to hear from you. Whether you have questions about our tours, need help with a booking, or simply want travel advice, contact us using the form or details below.</p>
+                    <div class="space-y-4">
+                        <p><i class="fas fa-phone-alt text-indigo-600 mr-2"></i> +39 06 1234 5678</p>
+                        <p><i class="fas fa-envelope text-indigo-600 mr-2"></i> info@imperialexperience.it</p>
+                        <p><i class="fas fa-map-marker-alt text-indigo-600 mr-2"></i> Via Roma 123, 00100 Rome, Italy</p>
+                    </div>
+                    <div class="mt-6">
+                        <iframe class="w-full h-64 rounded-lg" loading="lazy" allowfullscreen
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.0037269877564!2d12.482777415681695!3d41.89332097922018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61b0e90e38db%3A0xecd8f82a5ab746e!2sRome%2C%20Metropolitan%20City%20of%20Rome%20Capital%2C%20Italy!5e0!3m2!1sen!2sit!4v1644865240799!5m2!1sen!2sit" style="border:0;"></iframe>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Send a Message</h2>
+                    <form action="https://formspree.io/f/xwkzgbnl" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                        </div>
+                        <!-- Honey Pot for Spam Prevention -->
+                        <input type="text" name="_gotcha" style="display:none" />
+                        <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition duration-200">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-white text-xl font-semibold mb-2">Imperial Experience</h3>
+                    <p>Premium tours &amp; tickets in Rome and across Italy.</p>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h4 class="text-white font-semibold mb-2">Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                        <li><a href="tours.html" class="hover:text-white">Tours</a></li>
+                        <li><a href="tickets.html" class="hover:text-white">Tickets</a></li>
+                        <li><a href="contact.html" class="text-indigo-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-2">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-sm">
+                © 2025 Imperial Experience. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

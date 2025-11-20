@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tickets | Imperial Experience</title>
+    <meta name="description" content="Purchase skip-the-line tickets for the Vatican Museums, Colosseum, Villa Borghese, and other top attractions in Rome and across Italy." />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTcI3eWh4V2pwODe6acN9XZSy1F9HmHBA60xE9o3uV8Odx2bX8p7RB9Fjbj6yP/3o3qQpD4jIYAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10" x-data="{ open: false }">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600">Imperial Experience</a>
+            <button class="md:hidden text-gray-700 focus:outline-none" @click="open = !open">
+                <i :class="open ? 'fas fa-times' : 'fas fa-bars'" class="text-2xl"></i>
+            </button>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+                <li><a href="about.html" class="hover:text-indigo-600">About</a></li>
+                <li><a href="tours.html" class="hover:text-indigo-600">Tours</a></li>
+                <li><a href="tickets.html" class="text-indigo-600 font-semibold">Tickets</a></li>
+                <li><a href="contact.html" class="hover:text-indigo-600">Contact</a></li>
+            </ul>
+        </div>
+        <div class="md:hidden" x-show="open">
+            <ul class="bg-white px-4 pt-2 pb-4 space-y-2 shadow-md">
+                <li><a href="index.html" class="block text-gray-700 hover:text-indigo-600">Home</a></li>
+                <li><a href="about.html" class="block text-gray-700 hover:text-indigo-600">About</a></li>
+                <li><a href="tours.html" class="block text-gray-700 hover:text-indigo-600">Tours</a></li>
+                <li><a href="tickets.html" class="block text-indigo-600 font-semibold">Tickets</a></li>
+                <li><a href="contact.html" class="block text-gray-700 hover:text-indigo-600">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 md:pt-32 bg-gray-100 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Tickets</h1>
+            <p class="max-w-2xl mx-auto text-gray-600">Buy skip-the-line tickets to top attractions in Rome and Italy with instant confirmation.</p>
+        </div>
+    </section>
+
+    <!-- Tickets List -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 md:px-8 grid md:grid-cols-3 gap-12">
+            <!-- Vatican Ticket -->
+            <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition duration-200 flex flex-col">
+                <img src="https://images.unsplash.com/photo-1551028703-c01c4fb1b5c4?auto=format&fit=crop&w=800&q=60" alt="Vatican Museums Ticket" class="rounded-lg mb-4 h-48 w-full object-cover">
+                <h2 class="text-xl font-bold mb-2">Vatican Museums &amp; Sistine Chapel Ticket</h2>
+                <p class="text-gray-600 mb-2 flex-grow">Skip the queues and enjoy fast-track entry to the Vatican Museums and Sistine Chapel.</p>
+                <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€29</span></p>
+                <a href="booking.html?ticket=vatican" class="mt-auto bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-indigo-700 transition duration-200">Buy Ticket</a>
+            </div>
+            <!-- Colosseum Ticket -->
+            <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition duration-200 flex flex-col">
+                <img src="https://images.unsplash.com/photo-1593367372400-4e8fb581c24d?auto=format&fit=crop&w=800&q=60" alt="Colosseum Ticket" class="rounded-lg mb-4 h-48 w-full object-cover">
+                <h2 class="text-xl font-bold mb-2">Colosseum, Roman Forum &amp; Palatine Hill Ticket</h2>
+                <p class="text-gray-600 mb-2 flex-grow">Priority entry ticket to the Colosseum, Roman Forum, and Palatine Hill with audio guide options.</p>
+                <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€24</span></p>
+                <a href="booking.html?ticket=colosseum" class="mt-auto bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-indigo-700 transition duration-200">Buy Ticket</a>
+            </div>
+            <!-- Villa Borghese Ticket -->
+            <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition duration-200 flex flex-col">
+                <img src="https://images.unsplash.com/photo-1610832981009-d944c7869046?auto=format&fit=crop&w=800&q=60" alt="Villa Borghese Ticket" class="rounded-lg mb-4 h-48 w-full object-cover">
+                <h2 class="text-xl font-bold mb-2">Villa Borghese Gallery Ticket</h2>
+                <p class="text-gray-600 mb-2 flex-grow">Secure your entry to the stunning Borghese Gallery with masterpieces by Bernini, Caravaggio, and more.</p>
+                <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€23</span></p>
+                <a href="booking.html?ticket=borghese" class="mt-auto bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-indigo-700 transition duration-200">Buy Ticket</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-white text-xl font-semibold mb-2">Imperial Experience</h3>
+                    <p>Premium tours &amp; tickets in Rome and across Italy.</p>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h4 class="text-white font-semibold mb-2">Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                        <li><a href="tours.html" class="hover:text-white">Tours</a></li>
+                        <li><a href="tickets.html" class="text-indigo-400">Tickets</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-2">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-sm">
+                © 2025 Imperial Experience. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

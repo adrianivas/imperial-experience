@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imperial Experience Tours | Discover Rome & Italy</title>
+    <meta name="description" content="Imperial Experience offers premium tours and tickets in Rome and across Italy. Book Vatican tours, Colosseum tickets, Tuscany trips, and more. Secure card payments and instant confirmations." />
+    <!-- Tailwind CSS for rapid styling -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTcI3eWh4V2pwODe6acN9XZSy1F9HmHBA60xE9o3uV8Odx2bX8p7RB9Fjbj6yP/3o3qQpD4jIYAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
+</head>
+<body class="font-sans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10" x-data="{ open: false }">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold text-indigo-600">Imperial Experience</a>
+            <button class="md:hidden text-gray-700 focus:outline-none" @click="open = !open">
+                <i :class="open ? 'fas fa-times' : 'fas fa-bars'" class="text-2xl"></i>
+            </button>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
+                <li><a href="about.html" class="hover:text-indigo-600">About</a></li>
+                <li><a href="tours.html" class="hover:text-indigo-600">Tours</a></li>
+                <li><a href="tickets.html" class="hover:text-indigo-600">Tickets</a></li>
+                <li><a href="contact.html" class="hover:text-indigo-600">Contact</a></li>
+            </ul>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden" x-show="open">
+            <ul class="bg-white px-4 pt-2 pb-4 space-y-2 shadow-md">
+                <li><a href="index.html" class="block text-gray-700 hover:text-indigo-600">Home</a></li>
+                <li><a href="about.html" class="block text-gray-700 hover:text-indigo-600">About</a></li>
+                <li><a href="tours.html" class="block text-gray-700 hover:text-indigo-600">Tours</a></li>
+                <li><a href="tickets.html" class="block text-gray-700 hover:text-indigo-600">Tickets</a></li>
+                <li><a href="contact.html" class="block text-gray-700 hover:text-indigo-600">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 md:pt-32 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1543342386-7e6a50c0c2a3?auto=format&fit=crop&w=1400&q=60');">
+        <div class="container mx-auto px-4 py-32 text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Experience Rome & Italy Like Never Before</h1>
+            <p class="text-lg md:text-2xl mb-8 drop-shadow-md">Premium guided tours, exclusive tickets, unforgettable memories.</p>
+            <a href="tours.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-lg font-semibold transition duration-200">Explore Tours</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Imperial Experience?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our tours are curated for travelers who want a premium, exclusive experience. Enjoy skip-the-line access, expert guides, and seamless online bookings.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-200">
+                    <i class="fas fa-star text-indigo-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Premium Quality</h3>
+                    <p class="text-gray-600">Carefully selected tours and tickets to deliver top-notch experiences in Rome and across Italy.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-200">
+                    <i class="fas fa-ticket-alt text-indigo-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Skip-the-Line Access</h3>
+                    <p class="text-gray-600">Avoid long queues with our exclusive priority entry tickets and guided tours.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-200">
+                    <i class="fas fa-credit-card text-indigo-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Secure Payments</h3>
+                    <p class="text-gray-600">Pay safely online with credit card using trusted payment providers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlight Tours Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Tours</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our most popular experiences in Rome and beyond.</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Tour Card 1 -->
+                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1556611873-1ecb5fb1ccd7?auto=format&fit=crop&w=800&q=60" alt="Vatican Tour" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Vatican &amp; Sistine Chapel Tour</h3>
+                        <p class="text-gray-600 mb-4">Explore the Vatican Museums, Sistine Chapel, and St. Peter's Basilica with an expert guide.</p>
+                        <a href="tours.html#vatican" class="text-indigo-600 font-semibold hover:underline">Learn More →</a>
+                    </div>
+                </div>
+                <!-- Tour Card 2 -->
+                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1505232530843-7e8a7d9c7af5?auto=format&fit=crop&w=800&q=60" alt="Colosseum Tour" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Colosseum &amp; Ancient Rome</h3>
+                        <p class="text-gray-600 mb-4">Walk through the Colosseum, Roman Forum, and Palatine Hill with skip-the-line access.</p>
+                        <a href="tours.html#colosseum" class="text-indigo-600 font-semibold hover:underline">Learn More →</a>
+                    </div>
+                </div>
+                <!-- Tour Card 3 -->
+                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1519923041996-6ef3c778c6b8?auto=format&fit=crop&w=800&q=60" alt="Rome City Tour" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Rome City Highlights</h3>
+                        <p class="text-gray-600 mb-4">Discover Trevi Fountain, Spanish Steps, Piazza Navona, and more on a walking tour.</p>
+                        <a href="tours.html#city" class="text-indigo-600 font-semibold hover:underline">Learn More →</a>
+                    </div>
+                </div>
+                <!-- Tour Card 4 -->
+                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=60" alt="Tuscany Day Trip" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Tuscany Day Trip</h3>
+                        <p class="text-gray-600 mb-4">Enjoy wine tastings and rolling hills on a premium day trip to Tuscany.</p>
+                        <a href="tours.html#tuscany" class="text-indigo-600 font-semibold hover:underline">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section class="py-20 bg-indigo-600 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to explore Rome &amp; Italy?</h2>
+            <p class="mb-8 text-lg">Book your premium tour today and embark on an unforgettable journey.</p>
+            <a href="tours.html" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-200">View All Tours</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-white text-xl font-semibold mb-2">Imperial Experience</h3>
+                    <p>Premium tours &amp; tickets in Rome and across Italy.</p>
+                </div>
+                <div class="mb-6 md:mb-0">
+                    <h4 class="text-white font-semibold mb-2">Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html" class="hover:text-white">About</a></li>
+                        <li><a href="tours.html" class="hover:text-white">Tours</a></li>
+                        <li><a href="tickets.html" class="hover:text-white">Tickets</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-2">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-sm">
+                © 2025 Imperial Experience. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

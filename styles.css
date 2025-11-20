@@ -1,0 +1,17 @@
+/* Custom styles for Imperial Experience */
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide the Mobile Menu by default via Alpine.js; no custom styles necessary */
+
+/* Override default form input rounding if needed */
+input, textarea {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
+}
