@@ -8,7 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTcI3eWh4V2pwODe6acN9XZSy1F9HmHBA60xE9o3uV8Odx2bX8p7RB9Fjbj6yP/3o3qQpD4jIYAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css" />
+    <!-- AOS library for scroll animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 </head>
 <body class="font-sans text-gray-800">
     <!-- Navigation -->
@@ -38,7 +42,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-24 md:pt-32 bg-gray-100 py-12">
+    <section class="pt-24 md:pt-32 bg-gray-100 py-12" data-aos="fade-down">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Tours</h1>
             <p class="max-w-2xl mx-auto text-gray-600">Choose from our selection of premium tours that showcase the best of Rome and Italy.</p>
@@ -46,12 +50,12 @@
     </section>
 
     <!-- Tours List -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-white" data-aos="fade-up">
         <div class="container mx-auto px-4 md:px-8 space-y-24">
             <!-- Vatican Tour -->
             <div id="vatican" class="grid md:grid-cols-2 gap-12 items-center">
-                <img src="https://images.unsplash.com/photo-1543342386-7e6a50c0c2a3?auto=format&fit=crop&w=800&q=60" alt="Vatican & Sistine Chapel" class="rounded-lg shadow-lg">
-                <div>
+                <img src="img/sistine.jpg" alt="Vatican & Sistine Chapel" class="rounded-lg shadow-lg" data-aos="fade-right" data-aos-delay="100">
+                <div data-aos="fade-left" data-aos-delay="200">
                     <h2 class="text-3xl font-bold mb-2">Vatican &amp; Sistine Chapel Tour</h2>
                     <p class="text-gray-700 mb-4">Join our expert guide for an unforgettable tour of the Vatican Museums, Sistine Chapel, and St. Peter's Basilica. Enjoy skip-the-line entry and learn the fascinating history behind Michelangelo's masterpieces.</p>
                     <p class="text-gray-600 mb-4">Duration: 3 hours</p>
@@ -61,8 +65,8 @@
             </div>
             <!-- Colosseum Tour -->
             <div id="colosseum" class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
-                <img src="https://images.unsplash.com/photo-1505232530843-7e8a7d9c7af5?auto=format&fit=crop&w=800&q=60" alt="Colosseum & Ancient Rome" class="rounded-lg shadow-lg md:order-2">
-                <div>
+                <img src="img/colosseum-day.jpg" alt="Colosseum & Ancient Rome" class="rounded-lg shadow-lg md:order-2" data-aos="fade-left" data-aos-delay="100">
+                <div data-aos="fade-right" data-aos-delay="200">
                     <h2 class="text-3xl font-bold mb-2">Colosseum &amp; Ancient Rome</h2>
                     <p class="text-gray-700 mb-4">Step back in time as you explore the Colosseum, Roman Forum, and Palatine Hill with a licensed guide. Skip the lines and hear stories of gladiators, emperors, and daily life in ancient Rome.</p>
                     <p class="text-gray-600 mb-4">Duration: 3 hours</p>
@@ -72,8 +76,8 @@
             </div>
             <!-- City Highlights Tour -->
             <div id="city" class="grid md:grid-cols-2 gap-12 items-center">
-                <img src="https://images.unsplash.com/photo-1519923041996-6ef3c778c6b8?auto=format&fit=crop&w=800&q=60" alt="Rome City Highlights" class="rounded-lg shadow-lg">
-                <div>
+                <img src="img/rome.jpg" alt="Rome City Highlights" class="rounded-lg shadow-lg" data-aos="fade-right" data-aos-delay="100">
+                <div data-aos="fade-left" data-aos-delay="200">
                     <h2 class="text-3xl font-bold mb-2">Rome City Highlights</h2>
                     <p class="text-gray-700 mb-4">Discover the highlights of the Eternal City, including the Trevi Fountain, Spanish Steps, Pantheon, and Piazza Navona. Perfect for first-time visitors wanting a comprehensive overview of Rome.</p>
                     <p class="text-gray-600 mb-4">Duration: 4 hours</p>
@@ -96,35 +100,78 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-400 py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row md:justify-between">
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-white text-xl font-semibold mb-2">Imperial Experience</h3>
-                    <p>Premium tours &amp; tickets in Rome and across Italy.</p>
-                </div>
-                <div class="mb-6 md:mb-0">
-                    <h4 class="text-white font-semibold mb-2">Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html" class="hover:text-white">About</a></li>
-                        <li><a href="tours.html" class="text-indigo-400">Tours</a></li>
-                        <li><a href="tickets.html" class="hover:text-white">Tickets</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-2">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+            <div>
+                <h4 class="text-white text-lg font-semibold mb-2">Imperial Experience</h4>
+                <p class="text-gray-400 text-sm">Premium tours &amp; tickets in Rome and across Italy. Discover the art, history and culture of the Bel Paese.</p>
             </div>
-            <div class="mt-8 text-center text-sm">
-                © 2025 Imperial Experience. All rights reserved.
+            <div>
+                <h4 class="text-white font-semibold mb-2">Contact</h4>
+                <p class="flex items-center text-sm mb-1"><i class="fas fa-phone-alt mr-2"></i> +39 06 1234 5678</p>
+                <p class="flex items-center text-sm mb-1"><i class="fas fa-envelope mr-2"></i> info@imperialexperience.it</p>
+                <p class="flex items-center text-sm"><i class="fas fa-map-marker-alt mr-2"></i> Via Roma 123, 00100 Rome, Italy</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2">Quick Links</h4>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="about.html" class="hover:text-white">About</a></li>
+                    <li><a href="tours.html" class="text-indigo-400">Tours</a></li>
+                    <li><a href="tickets.html" class="hover:text-white">Tickets</a></li>
+                    <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2">Newsletter</h4>
+                <p class="text-gray-400 text-sm mb-2">Subscribe to receive updates and exclusive offers.</p>
+                <form class="flex flex-col sm:flex-row">
+                    <input type="email" placeholder="Email address" required class="w-full p-2 rounded-md sm:rounded-l-md sm:rounded-r-none mb-2 sm:mb-0 text-gray-800 focus:outline-none" />
+                    <button type="submit" class="sm:ml-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md">Subscribe</button>
+                </form>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
         </div>
+        <div class="mt-8 text-center text-xs text-gray-500">© 2025 Imperial Experience. All rights reserved.</div>
     </footer>
+    <!-- Initialize AOS animations -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (window.AOS) {
+          AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+          });
+        }
+        // Show cookie banner if consent not yet recorded
+        const banner = document.getElementById('cookie-banner');
+        if (banner && !localStorage.getItem('cookieConsent')) {
+          banner.style.display = 'flex';
+        }
+      });
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 hidden flex-col md:flex-row items-center justify-between bg-gray-900 text-white p-4" style="display:none;">
+        <p class="mb-2 md:mb-0 text-sm">We use cookies to improve your experience on our site. By continuing to browse, you accept our cookie policy.</p>
+        <button id="accept-cookies" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm">Accept</button>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const banner = document.getElementById('cookie-banner');
+        if (acceptBtn) {
+          acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'true');
+            if (banner) banner.style.display = 'none';
+          });
+        }
+      });
+    </script>
 </body>
 </html>
