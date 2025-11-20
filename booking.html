@@ -131,6 +131,8 @@
                 const params = new URLSearchParams(window.location.search);
                 const tour = params.get('tour');
                 const ticket = params.get('ticket');
+                const prefilledDate = params.get('date');
+                const prefilledGuests = params.get('guests');
                 const products = {
                     vatican: { id: 'vatican', title: 'Vatican & Sistine Chapel Tour', description: 'Guided tour of Vatican Museums, Sistine Chapel, and St. Peter\'s Basilica.', price: 99 },
                     colosseum: { id: 'colosseum', title: 'Colosseum & Ancient Rome Tour', description: 'Guided tour of the Colosseum, Roman Forum, and Palatine Hill.', price: 85 },
@@ -149,6 +151,15 @@
                     key = ticket + 'ticket';
                 }
                 this.product = products[key] || { id: 'custom', title: 'Custom Booking', description: 'Complete your booking details.', price: 0 };
+                
+                // Pre-fill form data if provided
+                if (prefilledDate) {
+                    this.form.date = prefilledDate;
+                }
+                if (prefilledGuests) {
+                    this.form.guests = parseInt(prefilledGuests) || 1;
+                }
+                
                 // load PayPal button after product is set
                 this.loadPayPal();
             },
