@@ -10,7 +10,11 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTcI3eWh4V2pwODe6acN9XZSy1F9HmHBA60xE9o3uV8Odx2bX8p7RB9Fjbj6yP/3o3qQpD4jIYAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles.css" />
+    <!-- AOS library for scroll animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 </head>
 <body class="font-sans text-gray-800">
     <!-- Navigation -->
@@ -41,43 +45,55 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-24 md:pt-32 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1543342386-7e6a50c0c2a3?auto=format&fit=crop&w=1400&q=60');">
+    <!-- Use our high‑resolution night photo of Rome with a dark overlay for readability -->
+    <section class="relative pt-24 md:pt-32 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img/rome-night.jpg');">
         <div class="container mx-auto px-4 py-32 text-center text-white">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Experience Rome & Italy Like Never Before</h1>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">Experience Rome &amp; Italy Like Never Before</h1>
             <p class="text-lg md:text-2xl mb-8 drop-shadow-md">Premium guided tours, exclusive tickets, unforgettable memories.</p>
             <a href="tours.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-lg font-semibold transition duration-200">Explore Tours</a>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-gray-50" data-aos="fade-up">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Imperial Experience?</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Our tours are curated for travelers who want a premium, exclusive experience. Enjoy skip-the-line access, expert guides, and seamless online bookings.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our tours are curated for travelers who want a premium, exclusive experience. Enjoy skip‑the‑line access, expert local guides, and seamless online bookings.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-200">
-                    <i class="fas fa-star text-indigo-600 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Premium Quality</h3>
-                    <p class="text-gray-600">Carefully selected tours and tickets to deliver top-notch experiences in Rome and across Italy.</p>
+            <!-- Expanded feature set: five key benefits -->
+            <div class="grid gap-8 md:grid-cols-5">
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow hover:shadow-lg transition duration-200 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-star text-indigo-600 text-3xl md:text-4xl mb-3"></i>
+                    <h3 class="text-lg md:text-xl font-semibold mb-1">Premium Quality</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Curated experiences and hand‑picked partners ensure every moment is unforgettable.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-200">
-                    <i class="fas fa-ticket-alt text-indigo-600 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Skip-the-Line Access</h3>
-                    <p class="text-gray-600">Avoid long queues with our exclusive priority entry tickets and guided tours.</p>
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow hover:shadow-lg transition duration-200 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-ticket-alt text-indigo-600 text-3xl md:text-4xl mb-3"></i>
+                    <h3 class="text-lg md:text-xl font-semibold mb-1">Skip‑the‑Line Access</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Priority entry so you spend more time exploring and less time waiting.</p>
                 </div>
-                <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-200">
-                    <i class="fas fa-credit-card text-indigo-600 text-4xl mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Secure Payments</h3>
-                    <p class="text-gray-600">Pay safely online with credit card using trusted payment providers.</p>
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow hover:shadow-lg transition duration-200 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-user-tie text-indigo-600 text-3xl md:text-4xl mb-3"></i>
+                    <h3 class="text-lg md:text-xl font-semibold mb-1">Expert Guides</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Licensed, knowledgeable guides bring history and culture to life.</p>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow hover:shadow-lg transition duration-200 text-center" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-headset text-indigo-600 text-3xl md:text-4xl mb-3"></i>
+                    <h3 class="text-lg md:text-xl font-semibold mb-1">24/7 Support</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Our team is available around the clock to answer questions and assist with bookings.</p>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow hover:shadow-lg transition duration-200 text-center" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-credit-card text-indigo-600 text-3xl md:text-4xl mb-3"></i>
+                    <h3 class="text-lg md:text-xl font-semibold mb-1">Secure Payments</h3>
+                    <p class="text-gray-600 text-sm md:text-base">Pay safely online with credit card through trusted providers and SSL encryption.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Highlight Tours Section -->
-    <section class="py-20">
+    <section class="py-20" data-aos="fade-up">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Tours</h2>
@@ -85,8 +101,9 @@
             </div>
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Tour Card 1 -->
-                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1556611873-1ecb5fb1ccd7?auto=format&fit=crop&w=800&q=60" alt="Vatican Tour" class="w-full h-48 object-cover">
+                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Local image for the Vatican tour card -->
+                    <img src="img/sistine.jpg" alt="Vatican Tour" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-lg font-semibold mb-2">Vatican &amp; Sistine Chapel Tour</h3>
                         <p class="text-gray-600 mb-4">Explore the Vatican Museums, Sistine Chapel, and St. Peter's Basilica with an expert guide.</p>
@@ -94,17 +111,19 @@
                     </div>
                 </div>
                 <!-- Tour Card 2 -->
-                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1505232530843-7e8a7d9c7af5?auto=format&fit=crop&w=800&q=60" alt="Colosseum Tour" class="w-full h-48 object-cover">
+                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Use our new daytime Colosseum image -->
+                    <img src="img/colosseum-day.jpg" alt="Colosseum Tour" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-lg font-semibold mb-2">Colosseum &amp; Ancient Rome</h3>
-                        <p class="text-gray-600 mb-4">Walk through the Colosseum, Roman Forum, and Palatine Hill with skip-the-line access.</p>
+                        <p class="text-gray-600 mb-4">Walk through the Colosseum, Roman Forum, and Palatine Hill with skip‑the‑line access.</p>
                         <a href="tours.html#colosseum" class="text-indigo-600 font-semibold hover:underline">Learn More →</a>
                     </div>
                 </div>
                 <!-- Tour Card 3 -->
-                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1519923041996-6ef3c778c6b8?auto=format&fit=crop&w=800&q=60" alt="Rome City Tour" class="w-full h-48 object-cover">
+                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Local image for the Rome City tour card -->
+                    <img src="img/rome.jpg" alt="Rome City Tour" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-lg font-semibold mb-2">Rome City Highlights</h3>
                         <p class="text-gray-600 mb-4">Discover Trevi Fountain, Spanish Steps, Piazza Navona, and more on a walking tour.</p>
@@ -112,7 +131,8 @@
                     </div>
                 </div>
                 <!-- Tour Card 4 -->
-                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden">
+                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <!-- Keep a remote image for Tuscany tour for variety -->
                     <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=60" alt="Tuscany Day Trip" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-lg font-semibold mb-2">Tuscany Day Trip</h3>
@@ -134,35 +154,79 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-400 py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row md:justify-between">
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-white text-xl font-semibold mb-2">Imperial Experience</h3>
-                    <p>Premium tours &amp; tickets in Rome and across Italy.</p>
-                </div>
-                <div class="mb-6 md:mb-0">
-                    <h4 class="text-white font-semibold mb-2">Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html" class="hover:text-white">About</a></li>
-                        <li><a href="tours.html" class="hover:text-white">Tours</a></li>
-                        <li><a href="tickets.html" class="hover:text-white">Tickets</a></li>
-                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-semibold mb-2">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
+    <footer class="bg-gray-900 text-gray-400 py-10">
+        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+            <div>
+                <h4 class="text-white text-lg font-semibold mb-2">Imperial Experience</h4>
+                <p class="text-gray-400 text-sm">Premium tours &amp; tickets in Rome and across Italy. Discover the art, history and culture of the Bel Paese.</p>
             </div>
-            <div class="mt-8 text-center text-sm">
-                © 2025 Imperial Experience. All rights reserved.Designed with ❤️ by Alee.
+            <div>
+                <h4 class="text-white font-semibold mb-2">Contact</h4>
+                <p class="flex items-center text-sm mb-1"><i class="fas fa-phone-alt mr-2"></i> +39 06 1234 5678</p>
+                <p class="flex items-center text-sm mb-1"><i class="fas fa-envelope mr-2"></i> info@imperialexperience.it</p>
+                <p class="flex items-center text-sm"><i class="fas fa-map-marker-alt mr-2"></i> Via Roma 123, 00100 Rome, Italy</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2">Quick Links</h4>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="about.html" class="hover:text-white">About</a></li>
+                    <li><a href="tours.html" class="hover:text-white">Tours</a></li>
+                    <li><a href="tickets.html" class="hover:text-white">Tickets</a></li>
+                    <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-2">Newsletter</h4>
+                <p class="text-gray-400 text-sm mb-2">Subscribe to receive updates and exclusive offers.</p>
+                <form class="flex flex-col sm:flex-row">
+                    <input type="email" placeholder="Email address" required class="w-full p-2 rounded-md sm:rounded-l-md sm:rounded-r-none mb-2 sm:mb-0 text-gray-800 focus:outline-none" />
+                    <button type="submit" class="sm:ml-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md">Subscribe</button>
+                </form>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
         </div>
+        <div class="mt-8 text-center text-xs text-gray-500">© 2025 Imperial Experience. All rights reserved.</div>
     </footer>
+    <!-- Initialize AOS animations -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (window.AOS) {
+          AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+          });
+        }
+        // Cookie consent handling: show banner if consent not yet given
+        const banner = document.getElementById('cookie-banner');
+        if (banner && !localStorage.getItem('cookieConsent')) {
+          banner.style.display = 'flex';
+        }
+      });
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 hidden flex-col md:flex-row items-center justify-between bg-gray-900 text-white p-4" style="display:none;">
+        <p class="mb-2 md:mb-0 text-sm">We use cookies to improve your experience on our site. By continuing to browse, you accept our cookie policy.</p>
+        <button id="accept-cookies" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm">Accept</button>
+    </div>
+
+    <script>
+      // Attach click handler separately so it registers even if loaded at bottom of body
+      document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        const banner = document.getElementById('cookie-banner');
+        if (acceptBtn) {
+          acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'true');
+            if (banner) banner.style.display = 'none';
+          });
+        }
+      });
+    </script>
 </body>
 </html>
