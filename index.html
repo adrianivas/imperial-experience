@@ -66,6 +66,13 @@
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
                 <h3 class="text-2xl font-bold mb-6 text-center">Find Your Perfect Tour</h3>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2 font-semibold">Search Tours</label>
+                    <div class="relative">
+                        <input type="text" x-model="filters.search" @input="filterTours()" placeholder="Search by tour name or destination..." class="w-full border border-gray-300 rounded-lg p-3 pl-10 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <i class="fas fa-search absolute left-3 top-4 text-gray-400"></i>
+                    </div>
+                </div>
                 <div class="grid md:grid-cols-3 gap-4">
                     <div>
                         <label class="block text-gray-700 mb-2 font-semibold">Tour Type</label>
@@ -75,6 +82,7 @@
                             <option value="colosseum">Colosseum Tours</option>
                             <option value="city">City Tours</option>
                             <option value="daytrip">Day Trips</option>
+                            <option value="food">Food & Wine Tours</option>
                         </select>
                     </div>
                     <div>
@@ -234,53 +242,124 @@
         </div>
     </section>
 
+    <!-- Special Offers Section -->
+    <section class="py-20 bg-gradient-to-r from-indigo-600 to-purple-600" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Special Offers</h2>
+                <p class="text-white text-opacity-90 max-w-2xl mx-auto">Limited-time deals on our most popular tours. Book now and save!</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Offer 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-yellow-400 text-gray-900 font-bold text-center py-2">
+                        SAVE 15%
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Early Bird Special</h3>
+                        <p class="text-gray-600 mb-4">Book any tour 30 days in advance and save 15% on your total.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 mb-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Valid for all tours</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Automatic discount at checkout</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Valid until December 2025</span>
+                            </li>
+                        </ul>
+                        <a href="tours.html" class="block text-center bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition duration-200">Book Now</a>
+                    </div>
+                </div>
+                <!-- Offer 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-red-500 text-white font-bold text-center py-2">
+                        COMBO DEAL
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Multi-Tour Package</h3>
+                        <p class="text-gray-600 mb-4">Book 3 or more tours together and get the best price per tour.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 mb-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Mix and match any tours</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Up to 25% savings</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Flexible scheduling</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="block text-center bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition duration-200">Contact Us</a>
+                    </div>
+                </div>
+                <!-- Offer 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-green-500 text-white font-bold text-center py-2">
+                        GROUP DISCOUNT
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Group Bookings</h3>
+                        <p class="text-gray-600 mb-4">Traveling with friends or family? Groups of 6+ receive special pricing.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 mb-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Groups of 6-10: 10% off</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Groups of 10+: 20% off</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <span>Private guide available</span>
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="block text-center bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition duration-200">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Highlight Tours Section -->
-    <section class="py-20 bg-gray-50" data-aos="fade-up">
+    <section class="py-20 bg-gray-50" data-aos="fade-up" x-data="tourSearch()">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Tours</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto">Our most popular experiences in Rome and beyond.</p>
             </div>
             <div class="grid md:grid-cols-4 gap-8">
-                <!-- Tour Card 1 -->
-                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <!-- Local image for the Vatican tour card -->
-                    <img src="img/sistine.jpg" alt="Vatican Tour" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Vatican &amp; Sistine Chapel Tour</h3>
-                        <p class="text-gray-600 mb-4">Explore the Vatican Museums, Sistine Chapel, and St. Peter's Basilica with an expert guide.</p>
-                        <a href="tours.html#vatican" class="text-indigo-600 font-semibold hover:underline">Learn More →</a>
+                <!-- Dynamic Tour Cards -->
+                <template x-for="(tour, index) in getFilteredTours()" :key="tour.id">
+                    <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden transition-all duration-300" data-aos="fade-up" :data-aos-delay="index * 100">
+                        <img :src="tour.image" :alt="tour.name" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-lg font-semibold" x-text="tour.name"></h3>
+                            </div>
+                            <p class="text-sm text-gray-500 mb-2" x-text="tour.duration"></p>
+                            <p class="text-gray-600 mb-4 text-sm" x-text="tour.description"></p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-indigo-600 font-bold text-lg" x-text="'€' + tour.price"></span>
+                                <span class="text-sm text-gray-500" x-text="'per person'"></span>
+                            </div>
+                            <a :href="'tours.html#' + tour.id" class="text-indigo-600 font-semibold hover:underline">Learn More →</a>
+                        </div>
                     </div>
-                </div>
-                <!-- Tour Card 2 -->
-                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <!-- Use our new daytime Colosseum image -->
-                    <img src="img/colosseum-day.jpg" alt="Colosseum Tour" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Colosseum &amp; Ancient Rome</h3>
-                        <p class="text-gray-600 mb-4">Walk through the Colosseum, Roman Forum, and Palatine Hill with skip‑the‑line access.</p>
-                        <a href="tours.html#colosseum" class="text-indigo-600 font-semibold hover:underline">Learn More →</a>
-                    </div>
-                </div>
-                <!-- Tour Card 3 -->
-                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                    <!-- Local image for the Rome City tour card -->
-                    <img src="img/rome.jpg" alt="Rome City Tour" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Rome City Highlights</h3>
-                        <p class="text-gray-600 mb-4">Discover Trevi Fountain, Spanish Steps, Piazza Navona, and more on a walking tour.</p>
-                        <a href="tours.html#city" class="text-indigo-600 font-semibold hover:underline">Learn More →</a>
-                    </div>
-                </div>
-                <!-- Tour Card 4 -->
-                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="400">
-                    <!-- Keep a remote image for Tuscany tour for variety -->
-                    <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=60" alt="Tuscany Day Trip" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-lg font-semibold mb-2">Tuscany Day Trip</h3>
-                        <p class="text-gray-600 mb-4">Enjoy wine tastings and rolling hills on a premium day trip to Tuscany.</p>
-                        <a href="tours.html#tuscany" class="text-indigo-600 font-semibold hover:underline">Learn More →</a>
-                    </div>
+                </template>
+                <!-- No results message -->
+                <div x-show="getFilteredTours().length === 0" class="col-span-full text-center py-12">
+                    <i class="fas fa-search text-gray-400 text-5xl mb-4"></i>
+                    <p class="text-gray-600 text-xl mb-2">No tours found matching your criteria</p>
+                    <p class="text-gray-500">Try adjusting your filters to see more results</p>
                 </div>
             </div>
         </div>
@@ -331,6 +410,78 @@
                             <p class="font-semibold">Emma Lee</p>
                             <p class="text-sm text-gray-600">London, UK</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Get answers to common questions about our tours and services.</p>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4" x-data="{ openFaq: null }">
+                <!-- FAQ 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center transition duration-200">
+                        <span class="font-semibold text-gray-800">How do I book a tour?</span>
+                        <i :class="openFaq === 1 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-indigo-600"></i>
+                    </button>
+                    <div x-show="openFaq === 1" x-transition class="px-6 py-4 bg-gray-50">
+                        <p class="text-gray-700">You can book a tour directly through our website by selecting your desired tour, choosing a date, and completing the secure online payment. You'll receive instant confirmation via email with all the details.</p>
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center transition duration-200">
+                        <span class="font-semibold text-gray-800">What is your cancellation policy?</span>
+                        <i :class="openFaq === 2 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-indigo-600"></i>
+                    </button>
+                    <div x-show="openFaq === 2" x-transition class="px-6 py-4 bg-gray-50">
+                        <p class="text-gray-700">We offer free cancellation up to 24 hours before your tour starts. For cancellations within 24 hours, a 50% fee applies. Please contact our support team for any changes or cancellations.</p>
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center transition duration-200">
+                        <span class="font-semibold text-gray-800">Are the tours suitable for children?</span>
+                        <i :class="openFaq === 3 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-indigo-600"></i>
+                    </button>
+                    <div x-show="openFaq === 3" x-transition class="px-6 py-4 bg-gray-50">
+                        <p class="text-gray-700">Most of our tours are family-friendly and suitable for children. However, some tours involve extensive walking or specific content that may be more appropriate for older children. Please check the tour details or contact us for recommendations.</p>
+                    </div>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center transition duration-200">
+                        <span class="font-semibold text-gray-800">Do you offer private tours?</span>
+                        <i :class="openFaq === 4 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-indigo-600"></i>
+                    </button>
+                    <div x-show="openFaq === 4" x-transition class="px-6 py-4 bg-gray-50">
+                        <p class="text-gray-700">Yes! We offer private tours for individuals, families, and small groups. Private tours can be customized to your interests and schedule. Contact us for pricing and availability.</p>
+                    </div>
+                </div>
+                <!-- FAQ 5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button @click="openFaq = openFaq === 5 ? null : 5" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center transition duration-200">
+                        <span class="font-semibold text-gray-800">What languages are available for tours?</span>
+                        <i :class="openFaq === 5 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-indigo-600"></i>
+                    </button>
+                    <div x-show="openFaq === 5" x-transition class="px-6 py-4 bg-gray-50">
+                        <p class="text-gray-700">We offer tours in English, Italian, Spanish, French, German, and several other languages. Language availability varies by tour, so please check the specific tour page or contact us to confirm.</p>
+                    </div>
+                </div>
+                <!-- FAQ 6 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button @click="openFaq = openFaq === 6 ? null : 6" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center transition duration-200">
+                        <span class="font-semibold text-gray-800">What should I bring on the tour?</span>
+                        <i :class="openFaq === 6 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-indigo-600"></i>
+                    </button>
+                    <div x-show="openFaq === 6" x-transition class="px-6 py-4 bg-gray-50">
+                        <p class="text-gray-700">We recommend comfortable walking shoes, water, sunscreen, and a hat for outdoor tours. For church and museum visits, modest clothing covering shoulders and knees is required. Your confirmation email will include specific requirements for your tour.</p>
                     </div>
                 </div>
             </div>
@@ -413,28 +564,150 @@
       // Alpine.js component for tour search
       function tourSearch() {
         return {
-          filters: { type: '', price: '', duration: '' },
-          filteredCount: 4,
+          filters: { type: '', price: '', duration: '', search: '' },
+          filteredCount: 0,
           tours: [
-            { id: 'vatican', type: 'vatican', price: 99, duration: 'half' },
-            { id: 'colosseum', type: 'colosseum', price: 85, duration: 'half' },
-            { id: 'city', type: 'city', price: 75, duration: 'half' },
-            { id: 'tuscany', type: 'daytrip', price: 150, duration: 'full' }
+            { 
+              id: 'vatican', 
+              name: 'Vatican & Sistine Chapel Tour',
+              type: 'vatican', 
+              price: 99, 
+              duration: '3 hours',
+              description: 'Explore the Vatican Museums, Sistine Chapel, and St. Peter\'s Basilica with an expert guide.',
+              image: 'img/sistine.jpg'
+            },
+            { 
+              id: 'colosseum', 
+              name: 'Colosseum & Ancient Rome',
+              type: 'colosseum', 
+              price: 85, 
+              duration: '3 hours',
+              description: 'Walk through the Colosseum, Roman Forum, and Palatine Hill with skip-the-line access.',
+              image: 'img/colosseum-day.jpg'
+            },
+            { 
+              id: 'city', 
+              name: 'Rome City Highlights',
+              type: 'city', 
+              price: 75, 
+              duration: '4 hours',
+              description: 'Discover Trevi Fountain, Spanish Steps, Piazza Navona, and more on a walking tour.',
+              image: 'img/rome.jpg'
+            },
+            { 
+              id: 'tuscany', 
+              name: 'Tuscany Day Trip',
+              type: 'daytrip', 
+              price: 150, 
+              duration: 'Full day',
+              description: 'Enjoy wine tastings and rolling hills on a premium day trip to Tuscany.',
+              image: 'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=60'
+            },
+            { 
+              id: 'foodtour', 
+              name: 'Rome Food & Wine Tour',
+              type: 'food', 
+              price: 95, 
+              duration: '4 hours',
+              description: 'Taste authentic Roman cuisine and wines in historic neighborhoods with a local guide.',
+              image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=60'
+            },
+            { 
+              id: 'pompeii', 
+              name: 'Pompeii & Amalfi Coast',
+              type: 'daytrip', 
+              price: 180, 
+              duration: 'Full day',
+              description: 'Discover ancient Pompeii and the stunning Amalfi Coast on this memorable day trip.',
+              image: 'https://images.unsplash.com/photo-1555992336-fb0d29498b13?auto=format&fit=crop&w=800&q=60'
+            },
+            { 
+              id: 'underground', 
+              name: 'Underground Rome Tour',
+              type: 'city', 
+              price: 70, 
+              duration: '3 hours',
+              description: 'Explore the hidden catacombs and underground ruins beneath Rome\'s streets.',
+              image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60'
+            },
+            { 
+              id: 'borghese', 
+              name: 'Borghese Gallery Tour',
+              type: 'city', 
+              price: 79, 
+              duration: '2.5 hours',
+              description: 'Marvel at masterpieces by Bernini, Caravaggio, and Raphael in the stunning Borghese Gallery.',
+              image: 'https://images.unsplash.com/photo-1580974852861-c381510bc98a?auto=format&fit=crop&w=800&q=60'
+            }
           ],
+          init() {
+            this.filterTours();
+          },
           filterTours() {
-            let count = 0;
-            this.tours.forEach(tour => {
+            const filtered = this.tours.filter(tour => {
               let matches = true;
+              
+              // Text search filter
+              if (this.filters.search) {
+                const searchLower = this.filters.search.toLowerCase();
+                const matchesName = tour.name.toLowerCase().includes(searchLower);
+                const matchesDescription = tour.description.toLowerCase().includes(searchLower);
+                if (!matchesName && !matchesDescription) matches = false;
+              }
+              
+              // Type filter
               if (this.filters.type && tour.type !== this.filters.type) matches = false;
+              
+              // Price filter
               if (this.filters.price) {
                 if (this.filters.price === 'budget' && tour.price >= 80) matches = false;
                 if (this.filters.price === 'standard' && (tour.price < 80 || tour.price > 100)) matches = false;
                 if (this.filters.price === 'premium' && tour.price <= 100) matches = false;
               }
-              if (this.filters.duration && tour.duration !== this.filters.duration) matches = false;
-              if (matches) count++;
+              
+              // Duration filter
+              if (this.filters.duration) {
+                const isFullDay = tour.duration.toLowerCase().includes('full');
+                if (this.filters.duration === 'full' && !isFullDay) matches = false;
+                if (this.filters.duration === 'half' && isFullDay) matches = false;
+              }
+              
+              return matches;
             });
-            this.filteredCount = count;
+            
+            this.filteredCount = filtered.length;
+          },
+          getFilteredTours() {
+            return this.tours.filter(tour => {
+              let matches = true;
+              
+              // Text search filter
+              if (this.filters.search) {
+                const searchLower = this.filters.search.toLowerCase();
+                const matchesName = tour.name.toLowerCase().includes(searchLower);
+                const matchesDescription = tour.description.toLowerCase().includes(searchLower);
+                if (!matchesName && !matchesDescription) matches = false;
+              }
+              
+              // Type filter
+              if (this.filters.type && tour.type !== this.filters.type) matches = false;
+              
+              // Price filter
+              if (this.filters.price) {
+                if (this.filters.price === 'budget' && tour.price >= 80) matches = false;
+                if (this.filters.price === 'standard' && (tour.price < 80 || tour.price > 100)) matches = false;
+                if (this.filters.price === 'premium' && tour.price <= 100) matches = false;
+              }
+              
+              // Duration filter
+              if (this.filters.duration) {
+                const isFullDay = tour.duration.toLowerCase().includes('full');
+                if (this.filters.duration === 'full' && !isFullDay) matches = false;
+                if (this.filters.duration === 'half' && isFullDay) matches = false;
+              }
+              
+              return matches;
+            });
           }
         }
       }
@@ -468,6 +741,30 @@
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 hidden flex-col md:flex-row items-center justify-between bg-gray-900 text-white p-4" style="display:none;">
         <p class="mb-2 md:mb-0 text-sm">We use cookies to improve your experience on our site. By continuing to browse, you accept our cookie policy.</p>
         <button id="accept-cookies" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm">Accept</button>
+    </div>
+
+    <!-- Floating Help Button -->
+    <div class="fixed bottom-6 right-6 z-40" x-data="{ showHelp: false }">
+        <button @click="showHelp = !showHelp" class="bg-indigo-600 hover:bg-indigo-700 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110">
+            <i :class="showHelp ? 'fas fa-times' : 'fas fa-question'" class="text-xl"></i>
+        </button>
+        <div x-show="showHelp" x-transition class="absolute bottom-16 right-0 bg-white rounded-lg shadow-xl p-4 w-64">
+            <h4 class="font-semibold mb-2 text-gray-800">Need Help?</h4>
+            <div class="space-y-2">
+                <a href="contact.html" class="block text-sm text-gray-700 hover:text-indigo-600 flex items-center">
+                    <i class="fas fa-envelope mr-2 text-indigo-600"></i> Contact Us
+                </a>
+                <a href="tel:+390612345678" class="block text-sm text-gray-700 hover:text-indigo-600 flex items-center">
+                    <i class="fas fa-phone mr-2 text-indigo-600"></i> Call: +39 06 1234 5678
+                </a>
+                <a href="#" class="block text-sm text-gray-700 hover:text-indigo-600 flex items-center">
+                    <i class="fab fa-whatsapp mr-2 text-indigo-600"></i> WhatsApp Support
+                </a>
+                <a href="#" class="block text-sm text-gray-700 hover:text-indigo-600 flex items-center">
+                    <i class="fas fa-comments mr-2 text-indigo-600"></i> Live Chat
+                </a>
+            </div>
+        </div>
     </div>
 <script>
   window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
