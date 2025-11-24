@@ -5,9 +5,9 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Animated gradient background for body */
+/* Animated gradient background for body - luxury subtle version */
 body {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   will-change: background-position;
@@ -33,15 +33,15 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Luxury animated background overlay */
+/* Luxury animated background overlay - elegant dark version */
 .luxury-bg {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #667eea 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d3561 25%, #1f4068 50%, #162447 75%, #1a1a2e 100%);
   background-size: 400% 400%;
   animation: gradientShift 20s ease infinite;
 }
 
 .luxury-bg-gold {
-  background: linear-gradient(135deg, #f6d365 0%, #fda085 25%, #a8edea 50%, #fed6e3 75%, #f6d365 100%);
+  background: linear-gradient(135deg, #c9a961 0%, #b8965f 25%, #d4af7a 50%, #a6885a 75%, #c9a961 100%);
   background-size: 400% 400%;
   animation: gradientShift 25s ease infinite;
 }
