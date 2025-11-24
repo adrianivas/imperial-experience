@@ -330,7 +330,7 @@
     </section>
 
     <!-- Highlight Tours Section -->
-    <section class="py-20 bg-gray-50" data-aos="fade-up" x-data="tourSearch()">
+    <section class="py-20 bg-gray-50" data-aos="fade-up" x-data="featuredTours()">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Tours</h2>
@@ -338,7 +338,7 @@
             </div>
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Dynamic Tour Cards -->
-                <template x-for="(tour, index) in getFilteredTours()" :key="tour.id">
+                <template x-for="(tour, index) in tours" :key="tour.id">
                     <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden transition-all duration-300" data-aos="fade-up" :data-aos-delay="index * 100">
                         <img :src="tour.image" :alt="tour.name" class="w-full h-48 object-cover">
                         <div class="p-6">
@@ -355,12 +355,6 @@
                         </div>
                     </div>
                 </template>
-                <!-- No results message -->
-                <div x-show="getFilteredTours().length === 0" class="col-span-full text-center py-12">
-                    <i class="fas fa-search text-gray-400 text-5xl mb-4"></i>
-                    <p class="text-gray-600 text-xl mb-2">No tours found matching your criteria</p>
-                    <p class="text-gray-500">Try adjusting your filters to see more results</p>
-                </div>
             </div>
         </div>
     </section>
@@ -709,6 +703,86 @@
               return matches;
             });
           }
+        }
+      }
+
+      // Alpine.js component for featured tours display (always shows all tours)
+      function featuredTours() {
+        return {
+          tours: [
+            { 
+              id: 'vatican', 
+              name: 'Vatican & Sistine Chapel Tour',
+              type: 'vatican', 
+              price: 99, 
+              duration: '3 hours',
+              description: 'Explore the Vatican Museums, Sistine Chapel, and St. Peter\'s Basilica with an expert guide.',
+              image: 'img/sistine.jpg'
+            },
+            { 
+              id: 'colosseum', 
+              name: 'Colosseum & Ancient Rome',
+              type: 'colosseum', 
+              price: 85, 
+              duration: '3 hours',
+              description: 'Walk through the Colosseum, Roman Forum, and Palatine Hill with skip-the-line access.',
+              image: 'img/colosseum-day.jpg'
+            },
+            { 
+              id: 'city', 
+              name: 'Rome City Highlights',
+              type: 'city', 
+              price: 75, 
+              duration: '4 hours',
+              description: 'Discover Trevi Fountain, Spanish Steps, Piazza Navona, and more on a walking tour.',
+              image: 'img/rome.jpg'
+            },
+            { 
+              id: 'tuscany', 
+              name: 'Tuscany Day Trip',
+              type: 'daytrip', 
+              price: 150, 
+              duration: 'Full day',
+              description: 'Enjoy wine tastings and rolling hills on a premium day trip to Tuscany.',
+              image: 'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=60'
+            },
+            { 
+              id: 'foodtour', 
+              name: 'Rome Food & Wine Tour',
+              type: 'food', 
+              price: 95, 
+              duration: '4 hours',
+              description: 'Taste authentic Roman cuisine and wines in historic neighborhoods with a local guide.',
+              image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=60'
+            },
+            { 
+              id: 'pompeii', 
+              name: 'Pompeii & Amalfi Coast',
+              type: 'daytrip', 
+              price: 180, 
+              duration: 'Full day',
+              description: 'Discover ancient Pompeii and the stunning Amalfi Coast on this memorable day trip.',
+              image: 'https://images.unsplash.com/photo-1555992336-fb0d29498b13?auto=format&fit=crop&w=800&q=60'
+            },
+            { 
+              id: 'underground', 
+              name: 'Underground Rome Tour',
+              type: 'city', 
+              price: 70, 
+              duration: '3 hours',
+              description: 'Explore the hidden catacombs and underground ruins beneath Rome\'s streets.',
+              image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60'
+            },
+            { 
+              id: 'borghese', 
+              name: 'Borghese Gallery Tour',
+              type: 'city', 
+              price: 79, 
+              duration: '2.5 hours',
+              description: 'Marvel at masterpieces by Bernini, Caravaggio, and Raphael in the stunning Borghese Gallery.',
+              image: 'https://images.unsplash.com/photo-1580974852861-c381510bc98a?auto=format&fit=crop&w=800&q=60'
+            }
+          ]
         }
       }
 
