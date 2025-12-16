@@ -619,7 +619,7 @@
             <div>
               <div class="relative">
                 <img src="${tour.image}" alt="${tour.name}" class="w-full h-64 md:h-96 object-cover">
-                <button onclick="document.querySelector('[x-show=\\'selectedTour\\']').style.display='none'" class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition shadow-lg">
+                <button onclick="document.querySelector('[x-show=&#39;selectedTour&#39;]').style.display='none'" class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition shadow-lg">
                   <i class="fas fa-times text-gray-700"></i>
                 </button>
                 <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
@@ -816,7 +816,7 @@
         });
 
         // Reset filters button
-        document.querySelectorAll('[\\@click="resetFilters()"]').forEach(btn => {
+        document.querySelectorAll('[\\@click="resetFilters()"], button[onclick*="resetFilters"]').forEach(btn => {
           btn.addEventListener('click', function() {
             state.filters = { search: '', type: '', price: '', duration: '' };
             state.sortBy = 'popularity';
