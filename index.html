@@ -26,26 +26,26 @@
     <!-- Navigation -->
     <nav class="bg-white shadow-md fixed w-full z-10" x-data="{ open: false }">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold text-indigo-600">Imperial Experience</a>
+            <a href="index.html" class="text-2xl font-bold" style="color: #2d2640;">Imperial Experience</a>
             <button class="md:hidden text-gray-700 focus:outline-none" @click="open = !open">
                 <i :class="open ? 'fas fa-times' : 'fas fa-bars'" class="text-2xl"></i>
             </button>
             <ul class="hidden md:flex space-x-6">
-                <li><a href="index.html" class="hover:text-indigo-600">Explore</a></li>
-                <li><a href="about.html" class="hover:text-indigo-600">About</a></li>
-                <li><a href="tours.html" class="hover:text-indigo-600">Tours</a></li>
-                <li><a href="tickets.html" class="hover:text-indigo-600">Tickets</a></li>
-                <li><a href="contact.html" class="hover:text-indigo-600">Contact</a></li>
+                <li><a href="index.html" class="hover:text-gray-700" style="transition: color 0.2s;">Explore</a></li>
+                <li><a href="about.html" class="hover:text-gray-700" style="transition: color 0.2s;">About</a></li>
+                <li><a href="tours.html" class="hover:text-gray-700" style="transition: color 0.2s;">Tours</a></li>
+                <li><a href="tickets.html" class="hover:text-gray-700" style="transition: color 0.2s;">Tickets</a></li>
+                <li><a href="contact.html" class="hover:text-gray-700" style="transition: color 0.2s;">Contact</a></li>
             </ul>
         </div>
         <!-- Mobile Menu -->
         <div class="md:hidden" x-show="open">
             <ul class="bg-white px-4 pt-2 pb-4 space-y-2 shadow-md">
-                <li><a href="index.html" class="block text-gray-700 hover:text-indigo-600">Explore</a></li>
-                <li><a href="about.html" class="block text-gray-700 hover:text-indigo-600">About</a></li>
-                <li><a href="tours.html" class="block text-gray-700 hover:text-indigo-600">Tours</a></li>
-                <li><a href="tickets.html" class="block text-gray-700 hover:text-indigo-600">Tickets</a></li>
-                <li><a href="contact.html" class="block text-gray-700 hover:text-indigo-600">Contact</a></li>
+                <li><a href="index.html" class="block text-gray-700 hover:text-gray-900">Explore</a></li>
+                <li><a href="about.html" class="block text-gray-700 hover:text-gray-900">About</a></li>
+                <li><a href="tours.html" class="block text-gray-700 hover:text-gray-900">Tours</a></li>
+                <li><a href="tickets.html" class="block text-gray-700 hover:text-gray-900">Tickets</a></li>
+                <li><a href="contact.html" class="block text-gray-700 hover:text-gray-900">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -57,8 +57,8 @@
             <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg float-animation">Experience Rome &amp; Italy Like Never Before</h1>
             <p class="text-lg md:text-2xl mb-8 drop-shadow-md">Premium guided tours, exclusive tickets, unforgettable memories.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="tours.html" class="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 text-gray-900 px-8 py-4 rounded-full text-lg font-bold transition duration-200 hover-scale shadow-lg">Explore Tours</a>
-                <a href="#calendar-booking" class="bg-white hover:bg-gray-100 text-purple-700 px-8 py-4 rounded-full text-lg font-bold transition duration-200 hover-scale shadow-lg border-2 border-yellow-400">Book Now</a>
+                <a href="tours.html" class="px-8 py-4 rounded-full text-lg font-bold transition duration-200 hover-scale shadow-lg" style="background: linear-gradient(135deg, #d4af37 0%, #c9a961 50%, #b8965f 100%); color: #1a1629;">Explore Tours</a>
+                <a href="#calendar-booking" class="bg-white hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-bold transition duration-200 hover-scale shadow-lg border-2" style="color: #2d2640; border-color: #d4af37;">Book Now</a>
             </div>
         </div>
     </section>
@@ -75,27 +75,27 @@
             <!-- Expanded feature set: five key benefits -->
             <div class="grid gap-8 md:grid-cols-5">
                 <div class="bg-white bg-opacity-90 p-6 md:p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-200 text-center hover-scale" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-star text-yellow-500 text-3xl md:text-4xl mb-3 pulse-animation"></i>
+                    <i class="fas fa-star text-3xl md:text-4xl mb-3 pulse-animation" style="color: #d4af37;"></i>
                     <h3 class="text-lg md:text-xl font-semibold mb-1">Premium Quality</h3>
                     <p class="text-gray-600 text-sm md:text-base">Curated experiences and hand‑picked partners ensure every moment is unforgettable.</p>
                 </div>
                 <div class="bg-white bg-opacity-90 p-6 md:p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-200 text-center hover-scale" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-ticket-alt text-yellow-500 text-3xl md:text-4xl mb-3 pulse-animation"></i>
+                    <i class="fas fa-ticket-alt text-3xl md:text-4xl mb-3 pulse-animation" style="color: #d4af37;"></i>
                     <h3 class="text-lg md:text-xl font-semibold mb-1">Skip‑the‑Line Access</h3>
                     <p class="text-gray-600 text-sm md:text-base">Priority entry so you spend more time exploring and less time waiting.</p>
                 </div>
                 <div class="bg-white bg-opacity-90 p-6 md:p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-200 text-center hover-scale" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-user-tie text-yellow-500 text-3xl md:text-4xl mb-3 pulse-animation"></i>
+                    <i class="fas fa-user-tie text-3xl md:text-4xl mb-3 pulse-animation" style="color: #d4af37;"></i>
                     <h3 class="text-lg md:text-xl font-semibold mb-1">Expert Guides</h3>
                     <p class="text-gray-600 text-sm md:text-base">Licensed, knowledgeable guides bring history and culture to life.</p>
                 </div>
                 <div class="bg-white bg-opacity-90 p-6 md:p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-200 text-center hover-scale" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-headset text-yellow-500 text-3xl md:text-4xl mb-3 pulse-animation"></i>
+                    <i class="fas fa-headset text-3xl md:text-4xl mb-3 pulse-animation" style="color: #d4af37;"></i>
                     <h3 class="text-lg md:text-xl font-semibold mb-1">24/7 Support</h3>
                     <p class="text-gray-600 text-sm md:text-base">Our team is available around the clock to answer questions and assist with bookings.</p>
                 </div>
                 <div class="bg-white bg-opacity-90 p-6 md:p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-200 text-center hover-scale" data-aos="fade-up" data-aos-delay="500">
-                    <i class="fas fa-credit-card text-yellow-500 text-3xl md:text-4xl mb-3 pulse-animation"></i>
+                    <i class="fas fa-credit-card text-3xl md:text-4xl mb-3 pulse-animation" style="color: #d4af37;"></i>
                     <h3 class="text-lg md:text-xl font-semibold mb-1">Secure Payments</h3>
                     <p class="text-gray-600 text-sm md:text-base">Pay safely online with credit card through trusted providers and SSL encryption.</p>
                 </div>
@@ -110,7 +110,7 @@
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Book Your Tour</h2>
                 <p class="text-white text-opacity-90 max-w-2xl mx-auto">Select a tour and choose your preferred date to get started.</p>
             </div>
-            <div class="max-w-4xl mx-auto bg-white bg-opacity-95 rounded-lg shadow-2xl p-8 border-4 border-yellow-400">
+            <div class="max-w-4xl mx-auto bg-white bg-opacity-95 rounded-lg shadow-2xl p-8 border-4" style="border-color: #d4af37;">
                 <div class="grid md:grid-cols-2 gap-8">
                     <div>
                         <h3 class="text-xl font-semibold mb-4 text-gray-900">Select Your Tour</h3>
@@ -118,14 +118,15 @@
                             <template x-for="tour in tours" :key="tour.id">
                                 <div @click="selectedTour = tour.id" 
                                      class="p-4 border-2 rounded-lg cursor-pointer transition duration-200 hover:shadow-lg hover-scale"
-                                     :class="selectedTour === tour.id ? 'border-yellow-500 bg-gradient-to-r from-yellow-50 to-purple-50' : 'border-gray-300'">
+                                     :class="selectedTour === tour.id ? 'border-2' : 'border-gray-300'"
+                                     :style="selectedTour === tour.id ? 'border-color: #d4af37; background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 100%);' : ''">
                                     <div class="flex justify-between items-center">
                                         <div>
                                             <h4 class="font-semibold text-gray-900" x-text="tour.name"></h4>
                                             <p class="text-sm text-gray-600" x-text="tour.duration"></p>
                                         </div>
                                         <div class="text-right">
-                                            <p class="text-yellow-600 font-bold text-lg" x-text="'€' + tour.price"></p>
+                                            <p class="font-bold text-lg" style="color: #b8965f;" x-text="'€' + tour.price"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -137,16 +138,18 @@
                         <div class="mb-4">
                             <input type="text" id="booking-calendar" 
                                    placeholder="Select date" 
-                                   class="w-full border-2 border-yellow-400 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                                   class="w-full border-2 rounded-lg p-3 focus:outline-none focus:ring-2"
+                                   style="border-color: #d4af37;"
                                    x-model="selectedDate" />
                         </div>
                         <div class="mb-4">
                             <label class="block text-gray-900 mb-2 font-semibold">Number of Guests</label>
                             <input type="number" min="1" max="20" 
                                    x-model.number="guests"
-                                   class="w-full border-2 border-yellow-400 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+                                   class="w-full border-2 rounded-lg p-3 focus:outline-none focus:ring-2"
+                                   style="border-color: #d4af37;" />
                         </div>
-                        <div class="bg-gradient-to-r from-purple-50 to-yellow-50 p-4 rounded-lg mb-4 border-2 border-yellow-300">
+                        <div class="p-4 rounded-lg mb-4 border-2" style="background: linear-gradient(135deg, #faf8f3 0%, #f5f0e8 100%); border-color: #d4af37;">
                             <div class="flex justify-between mb-2">
                                 <span class="text-gray-700 font-medium">Price per person:</span>
                                 <span class="font-bold text-gray-900" x-text="'€' + getCurrentPrice()"></span>
@@ -155,14 +158,16 @@
                                 <span class="text-gray-700 font-medium">Guests:</span>
                                 <span class="font-bold text-gray-900" x-text="guests"></span>
                             </div>
-                            <div class="border-t-2 border-yellow-400 pt-2 mt-2 flex justify-between">
+                            <div class="border-t-2 pt-2 mt-2 flex justify-between" style="border-color: #d4af37;">
                                 <span class="text-gray-900 font-bold text-lg">Total:</span>
-                                <span class="text-yellow-600 font-bold text-2xl" x-text="'€' + (getCurrentPrice() * guests)"></span>
+                                <span class="font-bold text-2xl" style="color: #b8965f;" x-text="'€' + (getCurrentPrice() * guests)"></span>
                             </div>
                         </div>
                         <button @click="proceedToBooking()" 
                                 :disabled="!selectedTour || !selectedDate"
-                                class="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 disabled:bg-gray-400 disabled:cursor-not-allowed text-gray-900 px-6 py-4 rounded-lg font-bold transition duration-200 shadow-lg hover-scale">
+                                class="w-full disabled:bg-gray-400 disabled:cursor-not-allowed px-6 py-4 rounded-lg font-bold transition duration-200 shadow-lg hover-scale"
+                                style="background: linear-gradient(135deg, #d4af37 0%, #c9a961 50%, #b8965f 100%); color: #1a1629;"
+                                :style="!selectedTour || !selectedDate ? 'background: #9ca3af !important;' : ''">
                             Proceed to Booking
                         </button>
                     </div>
@@ -176,19 +181,19 @@
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8 text-center">
                 <div class="p-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl md:text-5xl font-bold text-indigo-600 mb-2">50,000+</div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2" style="color: #2d2640;">50,000+</div>
                     <p class="text-gray-600">Happy Travelers</p>
                 </div>
                 <div class="p-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl md:text-5xl font-bold text-indigo-600 mb-2">15+</div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2" style="color: #2d2640;">15+</div>
                     <p class="text-gray-600">Years Experience</p>
                 </div>
                 <div class="p-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-4xl md:text-5xl font-bold text-indigo-600 mb-2">98%</div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2" style="color: #2d2640;">98%</div>
                     <p class="text-gray-600">Satisfaction Rate</p>
                 </div>
                 <div class="p-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-4xl md:text-5xl font-bold text-indigo-600 mb-2">24/7</div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2" style="color: #2d2640;">24/7</div>
                     <p class="text-gray-600">Customer Support</p>
                 </div>
             </div>
@@ -205,7 +210,7 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Offer 1 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-2xl hover-scale" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 font-bold text-center py-2">
+                    <div class="font-bold text-center py-2" style="background: linear-gradient(135deg, #d4af37 0%, #c9a961 100%); color: #1a1629;">
                         SAVE 15%
                     </div>
                     <div class="p-6">
@@ -225,12 +230,12 @@
                                 <span>Valid until December 2025</span>
                             </li>
                         </ul>
-                        <a href="tours.html" class="block text-center bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition duration-200">Book Now</a>
+                        <a href="tours.html" class="block text-center text-white px-4 py-2 rounded-lg font-semibold transition duration-200" style="background: linear-gradient(135deg, #2d2640 0%, #3d2f52 100%);">Book Now</a>
                     </div>
                 </div>
                 <!-- Offer 2 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-2xl hover-scale" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-gradient-to-r from-red-500 to-pink-500 text-white font-bold text-center py-2">
+                    <div class="text-white font-bold text-center py-2" style="background: linear-gradient(135deg, #8b6f47 0%, #a6885a 100%);">
                         COMBO DEAL
                     </div>
                     <div class="p-6">
@@ -250,12 +255,12 @@
                                 <span>Flexible scheduling</span>
                             </li>
                         </ul>
-                        <a href="contact.html" class="block text-center bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition duration-200">Contact Us</a>
+                        <a href="contact.html" class="block text-center text-white px-4 py-2 rounded-lg font-semibold transition duration-200" style="background: linear-gradient(135deg, #2d2640 0%, #3d2f52 100%);">Contact Us</a>
                     </div>
                 </div>
                 <!-- Offer 3 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-2xl hover-scale" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-gradient-to-r from-green-500 to-teal-500 text-white font-bold text-center py-2">
+                    <div class="text-white font-bold text-center py-2" style="background: linear-gradient(135deg, #6b5d4f 0%, #8b7a67 100%);">
                         GROUP DISCOUNT
                     </div>
                     <div class="p-6">
@@ -275,7 +280,7 @@
                                 <span>Private guide available</span>
                             </li>
                         </ul>
-                        <a href="contact.html" class="block text-center bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-4 py-2 rounded-lg font-semibold transition duration-200">Get Quote</a>
+                        <a href="contact.html" class="block text-center text-white px-4 py-2 rounded-lg font-semibold transition duration-200" style="background: linear-gradient(135deg, #2d2640 0%, #3d2f52 100%);">Get Quote</a>
                     </div>
                 </div>
             </div>
@@ -292,7 +297,7 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Dynamic Tour Cards -->
                 <template x-for="(tour, index) in tours" :key="tour.id">
-                    <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 hover-scale border-2 border-transparent hover:border-yellow-400" data-aos="fade-up" :data-aos-delay="index * 100">
+                    <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 hover-scale border-2 border-transparent" style="hover:border-color: #d4af37;" data-aos="fade-up" :data-aos-delay="index * 100">
                         <img :src="tour.image" :alt="tour.name" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-2">
@@ -301,10 +306,10 @@
                             <p class="text-sm text-gray-500 mb-2" x-text="tour.duration"></p>
                             <p class="text-gray-600 mb-4 text-sm" x-text="tour.description"></p>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="text-yellow-600 font-bold text-lg" x-text="'€' + tour.price"></span>
+                                <span class="font-bold text-lg" style="color: #b8965f;" x-text="'€' + tour.price"></span>
                                 <span class="text-sm text-gray-500" x-text="'per person'"></span>
                             </div>
-                            <a :href="'tours.html#' + tour.id" class="text-purple-700 font-semibold hover:text-yellow-600 transition">Learn More →</a>
+                            <a :href="'tours.html#' + tour.id" class="font-semibold transition" style="color: #2d2640;" onmouseover="this.style.color='#d4af37'" onmouseout="this.style.color='#2d2640'">Learn More →</a>
                         </div>
                     </div>
                 </template>
@@ -326,7 +331,7 @@
                     </div>
                     <p class="text-gray-700 mb-4 italic">"The Vatican tour was absolutely incredible! Our guide was so knowledgeable and the skip-the-line access saved us hours. Highly recommended!"</p>
                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold mr-3">SJ</div>
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold mr-3" style="background-color: #2d2640;">SJ</div>
                         <div>
                             <p class="font-semibold">Sarah Johnson</p>
                             <p class="text-sm text-gray-600">New York, USA</p>
@@ -339,7 +344,7 @@
                     </div>
                     <p class="text-gray-700 mb-4 italic">"Perfect day trip to Tuscany! The wine tasting was amazing and the scenery was breathtaking. Great organization from start to finish."</p>
                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold mr-3">MB</div>
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold mr-3" style="background-color: #2d2640;">MB</div>
                         <div>
                             <p class="font-semibold">Marco Bianchi</p>
                             <p class="text-sm text-gray-600">Milan, Italy</p>
@@ -352,7 +357,7 @@
                     </div>
                     <p class="text-gray-700 mb-4 italic">"The Colosseum tour brought ancient Rome to life! Our guide's passion for history was contagious. An unforgettable experience!"</p>
                     <div class="flex items-center">
-                        <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold mr-3">EL</div>
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold mr-3" style="background-color: #2d2640;">EL</div>
                         <div>
                             <p class="font-semibold">Emma Lee</p>
                             <p class="text-sm text-gray-600">London, UK</p>
@@ -375,7 +380,7 @@
                 <div class="border border-gray-200 rounded-lg overflow-hidden">
                     <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center transition duration-200">
                         <span class="font-semibold text-gray-800">How do I book a tour?</span>
-                        <i :class="openFaq === 1 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-indigo-600"></i>
+                        <i :class="openFaq === 1 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" style="color: #2d2640;"></i>
                     </button>
                     <div x-show="openFaq === 1" x-transition class="px-6 py-4 bg-gray-50">
                         <p class="text-gray-700">You can book a tour directly through our website by selecting your desired tour, choosing a date, and completing the secure online payment. You'll receive instant confirmation via email with all the details.</p>
@@ -385,7 +390,7 @@
                 <div class="border border-gray-200 rounded-lg overflow-hidden">
                     <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center transition duration-200">
                         <span class="font-semibold text-gray-800">What is your cancellation policy?</span>
-                        <i :class="openFaq === 2 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-indigo-600"></i>
+                        <i :class="openFaq === 2 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" style="color: #2d2640;"></i>
                     </button>
                     <div x-show="openFaq === 2" x-transition class="px-6 py-4 bg-gray-50">
                         <p class="text-gray-700">We offer free cancellation up to 24 hours before your tour starts. For cancellations within 24 hours, a 50% fee applies. Please contact our support team for any changes or cancellations.</p>
@@ -395,7 +400,7 @@
                 <div class="border border-gray-200 rounded-lg overflow-hidden">
                     <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center transition duration-200">
                         <span class="font-semibold text-gray-800">Are the tours suitable for children?</span>
-                        <i :class="openFaq === 3 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-indigo-600"></i>
+                        <i :class="openFaq === 3 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" style="color: #2d2640;"></i>
                     </button>
                     <div x-show="openFaq === 3" x-transition class="px-6 py-4 bg-gray-50">
                         <p class="text-gray-700">Most of our tours are family-friendly and suitable for children. However, some tours involve extensive walking or specific content that may be more appropriate for older children. Please check the tour details or contact us for recommendations.</p>
@@ -405,7 +410,7 @@
                 <div class="border border-gray-200 rounded-lg overflow-hidden">
                     <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center transition duration-200">
                         <span class="font-semibold text-gray-800">Do you offer private tours?</span>
-                        <i :class="openFaq === 4 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-indigo-600"></i>
+                        <i :class="openFaq === 4 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" style="color: #2d2640;"></i>
                     </button>
                     <div x-show="openFaq === 4" x-transition class="px-6 py-4 bg-gray-50">
                         <p class="text-gray-700">Yes! We offer private tours for individuals, families, and small groups. Private tours can be customized to your interests and schedule. Contact us for pricing and availability.</p>
@@ -415,7 +420,7 @@
                 <div class="border border-gray-200 rounded-lg overflow-hidden">
                     <button @click="openFaq = openFaq === 5 ? null : 5" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center transition duration-200">
                         <span class="font-semibold text-gray-800">What languages are available for tours?</span>
-                        <i :class="openFaq === 5 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-indigo-600"></i>
+                        <i :class="openFaq === 5 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" style="color: #2d2640;"></i>
                     </button>
                     <div x-show="openFaq === 5" x-transition class="px-6 py-4 bg-gray-50">
                         <p class="text-gray-700">We offer tours in English, Italian, Spanish, French, German, and several other languages. Language availability varies by tour, so please check the specific tour page or contact us to confirm.</p>
@@ -425,7 +430,7 @@
                 <div class="border border-gray-200 rounded-lg overflow-hidden">
                     <button @click="openFaq = openFaq === 6 ? null : 6" class="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 flex justify-between items-center transition duration-200">
                         <span class="font-semibold text-gray-800">What should I bring on the tour?</span>
-                        <i :class="openFaq === 6 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" class="text-indigo-600"></i>
+                        <i :class="openFaq === 6 ? 'fas fa-chevron-up' : 'fas fa-chevron-down'" style="color: #2d2640;"></i>
                     </button>
                     <div x-show="openFaq === 6" x-transition class="px-6 py-4 bg-gray-50">
                         <p class="text-gray-700">We recommend comfortable walking shoes, water, sunscreen, and a hat for outdoor tours. For church and museum visits, modest clothing covering shoulders and knees is required. Your confirmation email will include specific requirements for your tour.</p>
@@ -440,7 +445,7 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold mb-6 float-animation">Ready to explore Rome &amp; Italy?</h2>
             <p class="mb-8 text-lg">Book your premium tour today and embark on an unforgettable journey.</p>
-            <a href="tours.html" class="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 text-gray-900 px-8 py-4 rounded-full font-bold hover-scale transition duration-200 inline-block shadow-lg">View All Tours</a>
+            <a href="tours.html" class="px-8 py-4 rounded-full font-bold hover-scale transition duration-200 inline-block shadow-lg" style="background: linear-gradient(135deg, #d4af37 0%, #c9a961 50%, #b8965f 100%); color: #1a1629;">View All Tours</a>
         </div>
     </section>
 
@@ -471,7 +476,7 @@
                 <p class="text-gray-400 text-sm mb-2">Subscribe to receive updates and exclusive offers.</p>
                 <form class="flex flex-col sm:flex-row">
                     <input type="email" placeholder="Email address" required class="w-full p-2 rounded-md sm:rounded-l-md sm:rounded-r-none mb-2 sm:mb-0 text-gray-800 focus:outline-none" />
-                    <button type="submit" class="sm:ml-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md">Subscribe</button>
+                    <button type="submit" class="sm:ml-2 text-white px-4 py-2 rounded-md transition duration-200" style="background-color: #2d2640;" onmouseover="this.style.backgroundColor='#3d2f52'" onmouseout="this.style.backgroundColor='#2d2640'">Subscribe</button>
                 </form>
                 <div class="flex space-x-4 mt-4">
                     <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
@@ -548,23 +553,23 @@
 
     <!-- Floating Help Button -->
     <div class="fixed bottom-6 right-6 z-40" x-data="{ showHelp: false }">
-        <button @click="showHelp = !showHelp" class="bg-indigo-600 hover:bg-indigo-700 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110">
+        <button @click="showHelp = !showHelp" class="text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-200 hover:scale-110" style="background-color: #2d2640;" onmouseover="this.style.backgroundColor='#3d2f52'" onmouseout="this.style.backgroundColor='#2d2640'">
             <i :class="showHelp ? 'fas fa-times' : 'fas fa-question'" class="text-xl"></i>
         </button>
         <div x-show="showHelp" x-transition class="absolute bottom-16 right-0 bg-white rounded-lg shadow-xl p-4 w-64">
             <h4 class="font-semibold mb-2 text-gray-800">Need Help?</h4>
             <div class="space-y-2">
-                <a href="contact.html" class="block text-sm text-gray-700 hover:text-indigo-600 flex items-center">
-                    <i class="fas fa-envelope mr-2 text-indigo-600"></i> Contact Us
+                <a href="contact.html" class="block text-sm text-gray-700 flex items-center" style="transition: color 0.2s;" onmouseover="this.style.color='#2d2640'" onmouseout="this.style.color='#374151'">
+                    <i class="fas fa-envelope mr-2" style="color: #2d2640;"></i> Contact Us
                 </a>
-                <a href="tel:+390612345678" class="block text-sm text-gray-700 hover:text-indigo-600 flex items-center">
-                    <i class="fas fa-phone mr-2 text-indigo-600"></i> Call: +39 06 1234 5678
+                <a href="tel:+390612345678" class="block text-sm text-gray-700 flex items-center" style="transition: color 0.2s;" onmouseover="this.style.color='#2d2640'" onmouseout="this.style.color='#374151'">
+                    <i class="fas fa-phone mr-2" style="color: #2d2640;"></i> Call: +39 06 1234 5678
                 </a>
-                <a href="#" class="block text-sm text-gray-700 hover:text-indigo-600 flex items-center">
-                    <i class="fab fa-whatsapp mr-2 text-indigo-600"></i> WhatsApp Support
+                <a href="#" class="block text-sm text-gray-700 flex items-center" style="transition: color 0.2s;" onmouseover="this.style.color='#2d2640'" onmouseout="this.style.color='#374151'">
+                    <i class="fab fa-whatsapp mr-2" style="color: #2d2640;"></i> WhatsApp Support
                 </a>
-                <a href="#" class="block text-sm text-gray-700 hover:text-indigo-600 flex items-center">
-                    <i class="fas fa-comments mr-2 text-indigo-600"></i> Live Chat
+                <a href="#" class="block text-sm text-gray-700 flex items-center" style="transition: color 0.2s;" onmouseover="this.style.color='#2d2640'" onmouseout="this.style.color='#374151'">
+                    <i class="fas fa-comments mr-2" style="color: #2d2640;"></i> Live Chat
                 </a>
             </div>
         </div>

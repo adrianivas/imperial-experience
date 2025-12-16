@@ -10,7 +10,13 @@ const TOURS_DATA = [
     description: "Explore the Vatican Museums, Sistine Chapel, and St. Peter's Basilica with an expert guide.",
     longDescription: "Immerse yourself in the artistic and spiritual heart of Rome with this comprehensive Vatican tour. Your expert guide will lead you through the vast Vatican Museums, home to one of the world's greatest art collections. Marvel at ancient Roman sculptures, Renaissance masterpieces, and the breathtaking Raphael Rooms before reaching the crown jewel: Michelangelo's Sistine Chapel ceiling. End your tour at the magnificent St. Peter's Basilica, the largest church in the world.",
     image: 'img/sistine.jpg',
-    images: ['img/sistine.jpg', 'https://images.unsplash.com/photo-1583241800698-eeaa36815f63?auto=format&fit=crop&w=800&q=60'],
+    images: [
+      'img/sistine.jpg', 
+      'https://images.unsplash.com/photo-1583241800698-eeaa36815f63?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1585159812596-fac104f2e069?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 20,
     difficulty: 'Easy',
     meetingPoint: 'Vatican Museums Main Entrance, Viale Vaticano',
@@ -62,7 +68,13 @@ const TOURS_DATA = [
     description: 'Walk through the Colosseum, Roman Forum, and Palatine Hill with skip-the-line access.',
     longDescription: 'Step back in time to the glory days of the Roman Empire. This immersive tour takes you through the iconic Colosseum, where gladiators once fought for glory, the Roman Forum where senators debated the fate of the empire, and Palatine Hill where emperors built their lavish palaces. Your expert guide brings ancient Rome to life with vivid storytelling and historical insights.',
     image: 'img/colosseum-day.jpg',
-    images: ['img/colosseum-day.jpg', 'img/colosseum.jpg'],
+    images: [
+      'img/colosseum-day.jpg', 
+      'img/colosseum.jpg',
+      'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 25,
     difficulty: 'Moderate',
     meetingPoint: 'Colosseum Metro Station Exit, in front of the green newsstand',
@@ -114,7 +126,13 @@ const TOURS_DATA = [
     description: 'Discover Trevi Fountain, Spanish Steps, Piazza Navona, and more on a walking tour.',
     longDescription: 'Experience the best of Rome\'s historic center on this comprehensive walking tour. Wander through charming piazzas, toss a coin in the Trevi Fountain, climb the Spanish Steps, and marvel at the Pantheon\'s ancient engineering. Your local guide shares insider stories and hidden gems along the way, making this the perfect introduction to the Eternal City.',
     image: 'img/rome.jpg',
-    images: ['img/rome.jpg', 'img/rome-night.jpg'],
+    images: [
+      'img/rome.jpg', 
+      'img/rome-night.jpg',
+      'https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 20,
     difficulty: 'Easy',
     meetingPoint: 'Piazza di Spagna (Spanish Steps), near the fountain',
@@ -166,7 +184,13 @@ const TOURS_DATA = [
     description: 'Enjoy wine tastings and rolling hills on a premium day trip to Tuscany.',
     longDescription: 'Escape the city for a day in the stunning Tuscan countryside. Travel through rolling hills dotted with cypress trees and medieval hilltop towns. Visit two renowned wineries for tastings of Chianti Classico and Super Tuscan wines, paired with local cheeses and olive oils. Explore the charming streets of San Gimignano or Siena, and enjoy a traditional Tuscan lunch at a family-run trattoria.',
     image: 'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=60',
-    images: ['https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=60', 'https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?auto=format&fit=crop&w=800&q=60'],
+    images: [
+      'https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=60', 
+      'https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1533671767499-5dc94ed92758?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1464054313797-e27fb58e90a9?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 18,
     difficulty: 'Easy',
     meetingPoint: 'Termini Station, Platform 24',
@@ -221,7 +245,13 @@ const TOURS_DATA = [
     description: 'Taste authentic Roman cuisine and wines in historic neighborhoods with a local guide.',
     longDescription: 'Eat like a Roman on this delicious food tour through the city\'s most authentic neighborhoods. Sample traditional specialties like cacio e pepe, supplì, porchetta, and artisan gelato. Sip local wines from the Lazio region and learn about Roman food culture from your passionate local guide. Visit family-run shops, markets, and trattorias that have served locals for generations.',
     image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=60',
-    images: ['https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=60', 'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=60'],
+    images: [
+      'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=60', 
+      'https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 12,
     difficulty: 'Easy',
     meetingPoint: 'Campo de\' Fiori market square, near the statue',
@@ -274,7 +304,13 @@ const TOURS_DATA = [
     description: 'Discover ancient Pompeii and the stunning Amalfi Coast on this memorable day trip.',
     longDescription: 'Experience two of Italy\'s most iconic destinations in one unforgettable day. Explore the remarkably preserved ruins of Pompeii with an expert archaeologist guide, walking the ancient streets frozen in time by the eruption of Mount Vesuvius in 79 AD. Then journey along the breathtaking Amalfi Coast, stopping in the picturesque town of Positano for free time to explore, shop, and enjoy lunch with sea views.',
     image: 'https://images.unsplash.com/photo-1555992336-fb0d29498b13?auto=format&fit=crop&w=800&q=60',
-    images: ['https://images.unsplash.com/photo-1555992336-fb0d29498b13?auto=format&fit=crop&w=800&q=60', 'https://images.unsplash.com/photo-1557298374-7a9aee8f8e8d?auto=format&fit=crop&w=800&q=60'],
+    images: [
+      'https://images.unsplash.com/photo-1555992336-fb0d29498b13?auto=format&fit=crop&w=800&q=60', 
+      'https://images.unsplash.com/photo-1557298374-7a9aee8f8e8d?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1601581987809-a874a81309c9?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 20,
     difficulty: 'Moderate',
     meetingPoint: 'Piazza del Popolo, near the obelisk',
@@ -382,7 +418,12 @@ const TOURS_DATA = [
     description: 'Marvel at masterpieces by Bernini, Caravaggio, and Raphael in the stunning Borghese Gallery.',
     longDescription: 'Discover one of Rome\'s greatest art treasures at the Borghese Gallery. This intimate museum houses an extraordinary collection including Bernini\'s stunning sculptures, Caravaggio\'s dramatic paintings, and works by Raphael and Titian. Set in a beautiful villa surrounded by lush gardens, the gallery offers a more personal art experience than larger museums. Expert commentary brings each masterpiece to life.',
     image: 'https://images.unsplash.com/photo-1580974852861-c381510bc98a?auto=format&fit=crop&w=800&q=60',
-    images: ['https://images.unsplash.com/photo-1580974852861-c381510bc98a?auto=format&fit=crop&w=800&q=60'],
+    images: [
+      'https://images.unsplash.com/photo-1580974852861-c381510bc98a?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1578762560042-46ad127c95ea?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1567721913486-6585f069b332?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1549887534-1541e9326642?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 12,
     difficulty: 'Easy',
     meetingPoint: 'Borghese Gallery main entrance, Villa Borghese Gardens',
@@ -433,7 +474,13 @@ const TOURS_DATA = [
     description: 'Experience the magic of Rome after dark with illuminated monuments and charming piazzas.',
     longDescription: 'See Rome in a completely different light on this enchanting evening walking tour. As the sun sets and the crowds disperse, Rome\'s monuments are illuminated creating a magical atmosphere. Stroll through quiet streets and lively piazzas, enjoy aperitivo at a local wine bar, and discover why Romans say their city is most beautiful at night. The perfect way to experience la dolce vita.',
     image: 'https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=800&q=60',
-    images: ['https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=800&q=60', 'img/rome-night.jpg'],
+    images: [
+      'https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=800&q=60', 
+      'img/rome-night.jpg',
+      'https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 15,
     difficulty: 'Easy',
     meetingPoint: 'Piazza della Repubblica, near the fountain',
@@ -486,7 +533,13 @@ const TOURS_DATA = [
     description: 'Visit the birthplace of the Renaissance with stops at the Duomo, Uffizi, and Ponte Vecchio.',
     longDescription: 'Discover Florence, the cradle of the Renaissance, on this comprehensive day trip from Rome. Travel by high-speed train through the Tuscan countryside and spend the day exploring Florence\'s artistic treasures. Admire the iconic Duomo, cross the medieval Ponte Vecchio, and enjoy a guided walking tour of the historic center. Optional visit to the Uffizi Gallery home to Botticelli\'s Birth of Venus and other Renaissance masterpieces.',
     image: 'https://images.unsplash.com/photo-1541630259196-9e2c184976e5?auto=format&fit=crop&w=800&q=60',
-    images: ['https://images.unsplash.com/photo-1541630259196-9e2c184976e5?auto=format&fit=crop&w=800&q=60', 'https://images.unsplash.com/photo-1543429258-f9e515e5ca43?auto=format&fit=crop&w=800&q=60'],
+    images: [
+      'https://images.unsplash.com/photo-1541630259196-9e2c184976e5?auto=format&fit=crop&w=800&q=60', 
+      'https://images.unsplash.com/photo-1543429258-f9e515e5ca43?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1549144511-f099e773c147?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 20,
     difficulty: 'Moderate',
     meetingPoint: 'Rome Termini Station, near Track 24',
@@ -544,7 +597,13 @@ const TOURS_DATA = [
     description: 'Learn to cook authentic Italian dishes with a local chef and enjoy your creations.',
     longDescription: 'Roll up your sleeves and learn to cook like an Italian nonna in this hands-on cooking class. Under the guidance of a professional chef, you\'ll prepare a complete Italian meal from scratch including homemade pasta, traditional sauce, and tiramisu. Learn authentic techniques and family recipes in a warm, welcoming environment. After cooking, sit down to enjoy your creations with wine and new friends.',
     image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=60',
-    images: ['https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=60', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=60'],
+    images: [
+      'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=60', 
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 12,
     difficulty: 'Easy',
     meetingPoint: 'Cooking school near Campo de\' Fiori (exact address provided upon booking)',
@@ -600,7 +659,13 @@ const TOURS_DATA = [
     description: 'Exclusive private tour of the Vatican with early access before the crowds arrive.',
     longDescription: 'Experience the Vatican like a VIP on this exclusive private tour with early morning access. Enter the Vatican Museums before they open to the public and enjoy the galleries, Raphael Rooms, and Sistine Chapel in near-solitude. Your private expert guide provides personalized commentary tailored to your interests, and you can ask questions freely without the distraction of large crowds. This is the ultimate Vatican experience.',
     image: 'https://images.unsplash.com/photo-1583241800698-eeaa36815f63?auto=format&fit=crop&w=800&q=60',
-    images: ['https://images.unsplash.com/photo-1583241800698-eeaa36815f63?auto=format&fit=crop&w=800&q=60', 'img/sistine.jpg'],
+    images: [
+      'https://images.unsplash.com/photo-1583241800698-eeaa36815f63?auto=format&fit=crop&w=800&q=60', 
+      'img/sistine.jpg',
+      'https://images.unsplash.com/photo-1585159812596-fac104f2e069?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1594223414809-83a17b0ad9a2?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 6,
     difficulty: 'Easy',
     meetingPoint: 'Vatican Museums entrance (private meeting with guide)',
@@ -655,7 +720,12 @@ const TOURS_DATA = [
     description: 'Cruise through Rome on a classic Vespa scooter and see the city like a local.',
     longDescription: 'Experience Rome like a true Roman on a vintage Vespa scooter! Your professional driver navigates through the city\'s streets while you ride as a passenger, taking in iconic sights from a unique perspective. Stop for photos at the Colosseum, Circus Maximus, Aventine Hill keyhole, and more hidden gems. Feel the wind in your hair as you zip through Rome\'s historic center on this thrilling adventure.',
     image: 'https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?auto=format&fit=crop&w=800&q=60',
-    images: ['https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?auto=format&fit=crop&w=800&q=60'],
+    images: [
+      'https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 8,
     difficulty: 'Easy',
     meetingPoint: 'Office near Circus Maximus (exact address upon booking)',
@@ -712,7 +782,12 @@ const TOURS_DATA = [
     description: 'Journey through ancient Christian burial sites along the historic Appian Way.',
     longDescription: 'Escape the crowds and discover Rome\'s ancient Christian history along the legendary Appian Way. Visit the atmospheric catacombs where early Christians buried their dead and held secret ceremonies during times of persecution. Walk along sections of the original Roman road, still paved with ancient stones. Your guide brings this fascinating period of history to life with stories of saints, martyrs, and early Christian communities.',
     image: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60',
-    images: ['https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60'],
+    images: [
+      'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1588392382834-a891154bca4d?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 18,
     difficulty: 'Moderate',
     meetingPoint: 'Circus Maximus Metro Station exit',
@@ -767,7 +842,13 @@ const TOURS_DATA = [
     description: 'Visit Naples and learn the art of authentic Neapolitan pizza from master pizzaiolos.',
     longDescription: 'Journey to Naples, the birthplace of pizza, for an authentic pizza-making experience. Visit a traditional pizzeria where master pizzaiolos teach you the art of stretching dough, choosing quality ingredients, and baking in a wood-fired oven. Learn what makes Neapolitan pizza special and earn your pizza-making certificate! Includes time to explore Naples\' historic center and waterfront. Round-trip transportation from Rome included.',
     image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=60',
-    images: ['https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=60', 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=60'],
+    images: [
+      'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=60', 
+      'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 15,
     difficulty: 'Easy',
     meetingPoint: 'Rome Termini Station, Platform 24',
@@ -828,7 +909,13 @@ const TOURS_DATA = [
     description: 'Explore the charming Trastevere neighborhood with tastings at local trattorias.',
     longDescription: 'Discover Trastevere, Rome\'s most charming and authentic neighborhood, on this food and culture tour. Wind through narrow cobblestone streets lined with ivy-covered buildings, visit hidden churches with stunning mosaics, and stop at family-run trattorias and wine bars beloved by locals. Sample Roman specialties, artisan gelato, and regional wines while learning about the neighborhood\'s bohemian history and modern revival.',
     image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=60',
-    images: ['https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=60', 'https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?auto=format&fit=crop&w=800&q=60'],
+    images: [
+      'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=60', 
+      'https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?auto=format&fit=crop&w=800&q=60',
+      'https://images.unsplash.com/photo-1534634892-e386570e48cd?auto=format&fit=crop&w=800&q=60'
+    ],
     maxGroupSize: 14,
     difficulty: 'Easy',
     meetingPoint: 'Piazza Santa Maria in Trastevere, near the fountain',

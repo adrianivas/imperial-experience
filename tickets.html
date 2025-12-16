@@ -18,25 +18,25 @@
     <!-- Navigation -->
     <nav class="bg-white shadow-md fixed w-full z-10" x-data="{ open: false }">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold text-indigo-600">Imperial Experience</a>
+            <a href="index.html" class="text-2xl font-bold" style="color: #2d2640;">Imperial Experience</a>
             <button class="md:hidden text-gray-700 focus:outline-none" @click="open = !open">
                 <i :class="open ? 'fas fa-times' : 'fas fa-bars'" class="text-2xl"></i>
             </button>
             <ul class="hidden md:flex space-x-6">
-                <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
-                <li><a href="about.html" class="hover:text-indigo-600">About</a></li>
-                <li><a href="tours.html" class="hover:text-indigo-600">Tours</a></li>
-                <li><a href="tickets.html" class="text-indigo-600 font-semibold">Tickets</a></li>
-                <li><a href="contact.html" class="hover:text-indigo-600">Contact</a></li>
+                <li><a href="index.html" class="hover:text-gray-700" style="transition: color 0.2s;">Home</a></li>
+                <li><a href="about.html" class="hover:text-gray-700" style="transition: color 0.2s;">About</a></li>
+                <li><a href="tours.html" class="hover:text-gray-700" style="transition: color 0.2s;">Tours</a></li>
+                <li><a href="tickets.html" class="style="color: #2d2640;" font-semibold">Tickets</a></li>
+                <li><a href="contact.html" class="hover:text-gray-700" style="transition: color 0.2s;">Contact</a></li>
             </ul>
         </div>
         <div class="md:hidden" x-show="open">
             <ul class="bg-white px-4 pt-2 pb-4 space-y-2 shadow-md">
-                <li><a href="index.html" class="block text-gray-700 hover:text-indigo-600">Home</a></li>
-                <li><a href="about.html" class="block text-gray-700 hover:text-indigo-600">About</a></li>
-                <li><a href="tours.html" class="block text-gray-700 hover:text-indigo-600">Tours</a></li>
-                <li><a href="tickets.html" class="block text-indigo-600 font-semibold">Tickets</a></li>
-                <li><a href="contact.html" class="block text-gray-700 hover:text-indigo-600">Contact</a></li>
+                <li><a href="index.html" class="block text-gray-700 hover:text-gray-700" style="transition: color 0.2s;">Home</a></li>
+                <li><a href="about.html" class="block text-gray-700 hover:text-gray-700" style="transition: color 0.2s;">About</a></li>
+                <li><a href="tours.html" class="block text-gray-700 hover:text-gray-700" style="transition: color 0.2s;">Tours</a></li>
+                <li><a href="tickets.html" class="block style="color: #2d2640;" font-semibold">Tickets</a></li>
+                <li><a href="contact.html" class="block text-gray-700 hover:text-gray-700" style="transition: color 0.2s;">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -57,7 +57,7 @@
                 <img src="img/sistine.jpg" alt="Vatican Museums Ticket" class="rounded-lg mb-4 h-48 w-full object-cover">
                 <h2 class="text-xl font-bold mb-2">Vatican Museums &amp; Sistine Chapel Ticket</h2>
                 <p class="text-gray-600 mb-2 flex-grow">Skip the queues and enjoy fast-track entry to the Vatican Museums and Sistine Chapel.</p>
-                <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€29</span></p>
+                <p class="text-gray-600 mb-4">Price: <span class="style="color: #2d2640;" font-semibold">€29</span></p>
                 <a href="booking.html?ticket=vatican" class="mt-auto bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-indigo-700 transition duration-200">Buy Ticket</a>
             </div>
             <!-- Colosseum Ticket -->
@@ -65,7 +65,7 @@
                 <img src="img/colosseum-day.jpg" alt="Colosseum Ticket" class="rounded-lg mb-4 h-48 w-full object-cover">
                 <h2 class="text-xl font-bold mb-2">Colosseum, Roman Forum &amp; Palatine Hill Ticket</h2>
                 <p class="text-gray-600 mb-2 flex-grow">Priority entry ticket to the Colosseum, Roman Forum, and Palatine Hill with audio guide options.</p>
-                <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€24</span></p>
+                <p class="text-gray-600 mb-4">Price: <span class="style="color: #2d2640;" font-semibold">€24</span></p>
                 <a href="booking.html?ticket=colosseum" class="mt-auto bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-indigo-700 transition duration-200">Buy Ticket</a>
             </div>
             <!-- Villa Borghese Ticket -->
@@ -73,7 +73,7 @@
                 <img src="img/rome.jpg" alt="Villa Borghese Ticket" class="rounded-lg mb-4 h-48 w-full object-cover">
                 <h2 class="text-xl font-bold mb-2">Villa Borghese Gallery Ticket</h2>
                 <p class="text-gray-600 mb-2 flex-grow">Secure your entry to the stunning Borghese Gallery with masterpieces by Bernini, Caravaggio, and more.</p>
-                <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€23</span></p>
+                <p class="text-gray-600 mb-4">Price: <span class="style="color: #2d2640;" font-semibold">€23</span></p>
                 <a href="booking.html?ticket=borghese" class="mt-auto bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-indigo-700 transition duration-200">Buy Ticket</a>
             </div>
             <!-- Castel Sant'Angelo Ticket -->
@@ -81,7 +81,7 @@
                 <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60" alt="Castel Sant'Angelo Ticket" class="rounded-lg mb-4 h-48 w-full object-cover">
                 <h2 class="text-xl font-bold mb-2">Castel Sant'Angelo Skip-the-Line Ticket</h2>
                 <p class="text-gray-600 mb-2 flex-grow">Fast-track entry to the historic castle with stunning views over Rome and the Vatican.</p>
-                <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€18</span></p>
+                <p class="text-gray-600 mb-4">Price: <span class="style="color: #2d2640;" font-semibold">€18</span></p>
                 <a href="booking.html?ticket=castel" class="mt-auto bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-indigo-700 transition duration-200">Buy Ticket</a>
             </div>
             <!-- Capitoline Museums Ticket -->
@@ -89,7 +89,7 @@
                 <img src="https://images.unsplash.com/photo-1580974852861-c381510bc98a?auto=format&fit=crop&w=800&q=60" alt="Capitoline Museums Ticket" class="rounded-lg mb-4 h-48 w-full object-cover">
                 <h2 class="text-xl font-bold mb-2">Capitoline Museums Ticket</h2>
                 <p class="text-gray-600 mb-2 flex-grow">Explore one of the world's oldest public museums with ancient Roman art and artifacts.</p>
-                <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€16</span></p>
+                <p class="text-gray-600 mb-4">Price: <span class="style="color: #2d2640;" font-semibold">€16</span></p>
                 <a href="booking.html?ticket=capitoline" class="mt-auto bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-indigo-700 transition duration-200">Buy Ticket</a>
             </div>
             <!-- Ara Pacis Museum Ticket -->
@@ -97,7 +97,7 @@
                 <img src="https://images.unsplash.com/photo-1531572753322-ad063cecc140?auto=format&fit=crop&w=800&q=60" alt="Ara Pacis Museum Ticket" class="rounded-lg mb-4 h-48 w-full object-cover">
                 <h2 class="text-xl font-bold mb-2">Ara Pacis Museum Ticket</h2>
                 <p class="text-gray-600 mb-2 flex-grow">Visit the museum housing the Altar of Augustan Peace, a masterpiece of ancient Roman art.</p>
-                <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€13</span></p>
+                <p class="text-gray-600 mb-4">Price: <span class="style="color: #2d2640;" font-semibold">€13</span></p>
                 <a href="booking.html?ticket=arapacis" class="mt-auto bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-indigo-700 transition duration-200">Buy Ticket</a>
             </div>
             <!-- Palazzo Barberini Ticket -->
@@ -105,7 +105,7 @@
                 <img src="https://images.unsplash.com/photo-1583241800698-eeaa36815f63?auto=format&fit=crop&w=800&q=60" alt="Palazzo Barberini Ticket" class="rounded-lg mb-4 h-48 w-full object-cover">
                 <h2 class="text-xl font-bold mb-2">Palazzo Barberini National Gallery Ticket</h2>
                 <p class="text-gray-600 mb-2 flex-grow">Admire Renaissance and Baroque masterpieces in this magnificent palazzo.</p>
-                <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€15</span></p>
+                <p class="text-gray-600 mb-4">Price: <span class="style="color: #2d2640;" font-semibold">€15</span></p>
                 <a href="booking.html?ticket=barberini" class="mt-auto bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-indigo-700 transition duration-200">Buy Ticket</a>
             </div>
             <!-- Rome City Pass -->
@@ -113,7 +113,7 @@
                 <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60" alt="Rome City Pass" class="rounded-lg mb-4 h-48 w-full object-cover">
                 <h2 class="text-xl font-bold mb-2">Rome City Pass (3 Days)</h2>
                 <p class="text-gray-600 mb-2 flex-grow">All-inclusive pass with skip-the-line access to major attractions and public transport.</p>
-                <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€89</span></p>
+                <p class="text-gray-600 mb-4">Price: <span class="style="color: #2d2640;" font-semibold">€89</span></p>
                 <a href="booking.html?ticket=citypass" class="mt-auto bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-indigo-700 transition duration-200">Buy Ticket</a>
             </div>
             <!-- Hop-On Hop-Off Bus -->
@@ -121,7 +121,7 @@
                 <img src="https://images.unsplash.com/photo-1541630259196-9e2c184976e5?auto=format&fit=crop&w=800&q=60" alt="Hop-On Hop-Off Bus" class="rounded-lg mb-4 h-48 w-full object-cover">
                 <h2 class="text-xl font-bold mb-2">Hop-On Hop-Off Bus Ticket (24h)</h2>
                 <p class="text-gray-600 mb-2 flex-grow">Explore Rome at your own pace with unlimited bus access and audio commentary.</p>
-                <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€28</span></p>
+                <p class="text-gray-600 mb-4">Price: <span class="style="color: #2d2640;" font-semibold">€28</span></p>
                 <a href="booking.html?ticket=bus" class="mt-auto bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-indigo-700 transition duration-200">Buy Ticket</a>
             </div>
         </div>
@@ -154,7 +154,7 @@
                 <p class="text-gray-400 text-sm mb-2">Subscribe to receive updates and exclusive offers.</p>
                 <form class="flex flex-col sm:flex-row">
                     <input type="email" placeholder="Email address" required class="w-full p-2 rounded-md sm:rounded-l-md sm:rounded-r-none mb-2 sm:mb-0 text-gray-800 focus:outline-none" />
-                    <button type="submit" class="sm:ml-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md">Subscribe</button>
+                    <button type="submit" class="sm:ml-2 transition duration-200" style="background-color: #2d2640;" onmouseover="this.style.backgroundColor='#3d2f52'" onmouseout="this.style.backgroundColor='#2d2640' text-white px-4 py-2 rounded-md">Subscribe</button>
                 </form>
                 <div class="flex space-x-4 mt-4">
                     <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
@@ -186,7 +186,7 @@
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 hidden flex-col md:flex-row items-center justify-between bg-gray-900 text-white p-4" style="display:none;">
         <p class="mb-2 md:mb-0 text-sm">We use cookies to improve your experience on our site. By continuing to browse, you accept our cookie policy.</p>
-        <button id="accept-cookies" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm">Accept</button>
+        <button id="accept-cookies" class="transition duration-200" style="background-color: #2d2640;" onmouseover="this.style.backgroundColor='#3d2f52'" onmouseout="this.style.backgroundColor='#2d2640' text-white px-4 py-2 rounded-md text-sm">Accept</button>
     </div>
 
     <script>

@@ -18,25 +18,25 @@
     <!-- Navigation -->
     <nav class="bg-white shadow-md fixed w-full z-10" x-data="{ open: false }">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold text-indigo-600">Imperial Experience</a>
+            <a href="index.html" class="text-2xl font-bold" style="color: #2d2640;">Imperial Experience</a>
             <button class="md:hidden text-gray-700 focus:outline-none" @click="open = !open">
                 <i :class="open ? 'fas fa-times' : 'fas fa-bars'" class="text-2xl"></i>
             </button>
             <ul class="hidden md:flex space-x-6">
-                <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
-                <li><a href="about.html" class="text-indigo-600 font-semibold">About</a></li>
-                <li><a href="tours.html" class="hover:text-indigo-600">Tours</a></li>
-                <li><a href="tickets.html" class="hover:text-indigo-600">Tickets</a></li>
-                <li><a href="contact.html" class="hover:text-indigo-600">Contact</a></li>
+                <li><a href="index.html" class="hover:text-gray-700" style="transition: color 0.2s;">Home</a></li>
+                <li><a href="about.html" class="style="color: #2d2640;" font-semibold">About</a></li>
+                <li><a href="tours.html" class="hover:text-gray-700" style="transition: color 0.2s;">Tours</a></li>
+                <li><a href="tickets.html" class="hover:text-gray-700" style="transition: color 0.2s;">Tickets</a></li>
+                <li><a href="contact.html" class="hover:text-gray-700" style="transition: color 0.2s;">Contact</a></li>
             </ul>
         </div>
         <div class="md:hidden" x-show="open">
             <ul class="bg-white px-4 pt-2 pb-4 space-y-2 shadow-md">
-                <li><a href="index.html" class="block text-gray-700 hover:text-indigo-600">Home</a></li>
-                <li><a href="about.html" class="block text-indigo-600 font-semibold">About</a></li>
-                <li><a href="tours.html" class="block text-gray-700 hover:text-indigo-600">Tours</a></li>
-                <li><a href="tickets.html" class="block text-gray-700 hover:text-indigo-600">Tickets</a></li>
-                <li><a href="contact.html" class="block text-gray-700 hover:text-indigo-600">Contact</a></li>
+                <li><a href="index.html" class="block text-gray-700 hover:text-gray-700" style="transition: color 0.2s;">Home</a></li>
+                <li><a href="about.html" class="block style="color: #2d2640;" font-semibold">About</a></li>
+                <li><a href="tours.html" class="block text-gray-700 hover:text-gray-700" style="transition: color 0.2s;">Tours</a></li>
+                <li><a href="tickets.html" class="block text-gray-700 hover:text-gray-700" style="transition: color 0.2s;">Tickets</a></li>
+                <li><a href="contact.html" class="block text-gray-700 hover:text-gray-700" style="transition: color 0.2s;">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -77,17 +77,17 @@
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-200 text-center">
-                    <i class="fas fa-heart text-indigo-600 text-4xl mb-4"></i>
+                    <i class="fas fa-heart style="color: #2d2640;" text-4xl mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Passion</h3>
                     <p class="text-gray-600">Our love for Italy drives us to create unforgettable experiences for every traveler.</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-200 text-center">
-                    <i class="fas fa-users text-indigo-600 text-4xl mb-4"></i>
+                    <i class="fas fa-users style="color: #2d2640;" text-4xl mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Expertise</h3>
                     <p class="text-gray-600">Our guides are licensed professionals with deep knowledge of Italy's history and culture.</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow hover:shadow-lg transition duration-200 text-center">
-                    <i class="fas fa-globe-europe text-indigo-600 text-4xl mb-4"></i>
+                    <i class="fas fa-globe-europe style="color: #2d2640;" text-4xl mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Sustainability</h3>
                     <p class="text-gray-600">We promote responsible tourism that protects cultural heritage and supports local communities.</p>
                 </div>
@@ -100,7 +100,7 @@
         <div class="container mx-auto px-4">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to experience Italy with us?</h2>
             <p class="mb-8 text-lg">Discover our premium tours and let us guide you through the wonders of Rome and beyond.</p>
-            <a href="tours.html" class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-200">View Our Tours</a>
+            <a href="tours.html" class="bg-white style="color: #2d2640;" px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-200">View Our Tours</a>
         </div>
     </section>
 
@@ -131,7 +131,7 @@
                 <p class="text-gray-400 text-sm mb-2">Subscribe to receive updates and exclusive offers.</p>
                 <form class="flex flex-col sm:flex-row">
                     <input type="email" placeholder="Email address" required class="w-full p-2 rounded-md sm:rounded-l-md sm:rounded-r-none mb-2 sm:mb-0 text-gray-800 focus:outline-none" />
-                    <button type="submit" class="sm:ml-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md">Subscribe</button>
+                    <button type="submit" class="sm:ml-2 transition duration-200" style="background-color: #2d2640;" onmouseover="this.style.backgroundColor='#3d2f52'" onmouseout="this.style.backgroundColor='#2d2640' text-white px-4 py-2 rounded-md">Subscribe</button>
                 </form>
                 <div class="flex space-x-4 mt-4">
                     <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
@@ -163,7 +163,7 @@
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 hidden flex-col md:flex-row items-center justify-between bg-gray-900 text-white p-4" style="display:none;">
         <p class="mb-2 md:mb-0 text-sm">We use cookies to improve your experience on our site. By continuing to browse, you accept our cookie policy.</p>
-        <button id="accept-cookies" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm">Accept</button>
+        <button id="accept-cookies" class="transition duration-200" style="background-color: #2d2640;" onmouseover="this.style.backgroundColor='#3d2f52'" onmouseout="this.style.backgroundColor='#2d2640' text-white px-4 py-2 rounded-md text-sm">Accept</button>
     </div>
 
     <script>
