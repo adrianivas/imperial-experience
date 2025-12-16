@@ -5,9 +5,9 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Animated gradient background for body - luxury subtle version */
+/* Animated gradient background for body - premium subtle version */
 body {
-  background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #1a1a2e);
+  background: linear-gradient(-45deg, #1a1629, #2d2640, #1e1e3f, #1a1629);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
   will-change: background-position;
@@ -33,15 +33,15 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Luxury animated background overlay - elegant dark version */
+/* Premium animated background overlay - sophisticated dark version */
 .luxury-bg {
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d3561 25%, #1f4068 50%, #162447 75%, #1a1a2e 100%);
+  background: linear-gradient(135deg, #1a1629 0%, #2d2640 25%, #3d2f52 50%, #2a1f3d 75%, #1a1629 100%);
   background-size: 400% 400%;
   animation: gradientShift 20s ease infinite;
 }
 
 .luxury-bg-gold {
-  background: linear-gradient(135deg, #c9a961 0%, #b8965f 25%, #d4af7a 50%, #a6885a 75%, #c9a961 100%);
+  background: linear-gradient(135deg, #d4af37 0%, #c9a961 25%, #b8965f 50%, #aa8f5a 75%, #d4af37 100%);
   background-size: 400% 400%;
   animation: gradientShift 25s ease infinite;
 }
@@ -66,29 +66,29 @@ body {
   animation: pulse 2s ease-in-out infinite;
 }
 
-/* Shimmer effect for luxury feel */
+/* Shimmer effect for premium feel */
 @keyframes shimmer {
   0% { background-position: -1000px 0; }
   100% { background-position: 1000px 0; }
 }
 
 .shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
   background-size: 1000px 100%;
   animation: shimmer 3s infinite;
 }
 
-/* Gold accent color */
+/* Champagne gold accent colors - premium palette */
 .text-gold {
-  color: #ffd700;
+  color: #d4af37;
 }
 
 .bg-gold {
-  background-color: #ffd700;
+  background-color: #d4af37;
 }
 
 .border-gold {
-  border-color: #ffd700;
+  border-color: #d4af37;
 }
 
 /* Hover effects with scale */
@@ -106,7 +106,7 @@ input, textarea {
 }
 
 input:focus, textarea:focus {
-  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.4);
 }
 
 /* Animated particles background */
@@ -123,8 +123,8 @@ input:focus, textarea:focus {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle, rgba(255, 215, 0, 0.2) 1px, transparent 1px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    radial-gradient(circle, rgba(212, 175, 55, 0.15) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
   background-size: 50px 50px, 80px 80px;
   background-position: 0 0, 40px 40px;
   animation: particleMove 20s linear infinite;
