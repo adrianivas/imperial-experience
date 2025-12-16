@@ -35,25 +35,25 @@
     <!-- Navigation -->
     <nav class="bg-white shadow-md fixed w-full z-10" x-data="{ open: false }">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <a href="index.html" class="text-2xl font-bold text-indigo-600">Imperial Experience</a>
+            <a href="index.html" class="text-2xl font-bold" style="color: #2d2640;">Imperial Experience</a>
             <button class="md:hidden text-gray-700 focus:outline-none" @click="open = !open">
                 <i :class="open ? 'fas fa-times' : 'fas fa-bars'" class="text-2xl"></i>
             </button>
             <ul class="hidden md:flex space-x-6">
-                <li><a href="index.html" class="hover:text-indigo-600">Explore</a></li>
-                <li><a href="about.html" class="hover:text-indigo-600">About</a></li>
-                <li><a href="tours.html" class="text-indigo-600 font-semibold">Tours</a></li>
-                <li><a href="tickets.html" class="hover:text-indigo-600">Tickets</a></li>
-                <li><a href="contact.html" class="hover:text-indigo-600">Contact</a></li>
+                <li><a href="index.html" class="hover:text-gray-700" style="transition: color 0.2s;">Explore</a></li>
+                <li><a href="about.html" class="hover:text-gray-700" style="transition: color 0.2s;">About</a></li>
+                <li><a href="tours.html" class="font-semibold" style="color: #2d2640;">Tours</a></li>
+                <li><a href="tickets.html" class="hover:text-gray-700" style="transition: color 0.2s;">Tickets</a></li>
+                <li><a href="contact.html" class="hover:text-gray-700" style="transition: color 0.2s;">Contact</a></li>
             </ul>
         </div>
         <div class="md:hidden" x-show="open">
             <ul class="bg-white px-4 pt-2 pb-4 space-y-2 shadow-md">
-                <li><a href="index.html" class="block text-gray-700 hover:text-indigo-600">Explore</a></li>
-                <li><a href="about.html" class="block text-gray-700 hover:text-indigo-600">About</a></li>
-                <li><a href="tours.html" class="block text-indigo-600 font-semibold">Tours</a></li>
-                <li><a href="tickets.html" class="block text-gray-700 hover:text-indigo-600">Tickets</a></li>
-                <li><a href="contact.html" class="block text-gray-700 hover:text-indigo-600">Contact</a></li>
+                <li><a href="index.html" class="block text-gray-700 hover:text-gray-900">Explore</a></li>
+                <li><a href="about.html" class="block text-gray-700 hover:text-gray-900">About</a></li>
+                <li><a href="tours.html" class="block font-semibold" style="color: #2d2640;">Tours</a></li>
+                <li><a href="tickets.html" class="block text-gray-700 hover:text-gray-900">Tickets</a></li>
+                <li><a href="contact.html" class="block text-gray-700 hover:text-gray-900">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -78,12 +78,12 @@
                                x-model="filters.search" 
                                @input="filterTours()"
                                placeholder="Search tours..." 
-                               class="w-full pl-10 pr-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500" />
+                               class="w-full pl-10 pr-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="focus:border-color: #d4af37;" />
                     </div>
                 </div>
                 <!-- Type Filter -->
                 <div>
-                    <select x-model="filters.type" @change="filterTours()" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500">
+                    <select x-model="filters.type" @change="filterTours()" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="focus:border-color: #d4af37;">
                         <option value="">All Categories</option>
                         <option value="vatican">Vatican</option>
                         <option value="colosseum">Colosseum</option>
@@ -94,7 +94,7 @@
                 </div>
                 <!-- Price Filter -->
                 <div>
-                    <select x-model="filters.price" @change="filterTours()" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500">
+                    <select x-model="filters.price" @change="filterTours()" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="focus:border-color: #d4af37;">
                         <option value="">All Prices</option>
                         <option value="budget">Under €80</option>
                         <option value="standard">€80 - €100</option>
@@ -103,7 +103,7 @@
                 </div>
                 <!-- Duration Filter -->
                 <div>
-                    <select x-model="filters.duration" @change="filterTours()" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500">
+                    <select x-model="filters.duration" @change="filterTours()" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="focus:border-color: #d4af37;">
                         <option value="">All Durations</option>
                         <option value="half">Half Day</option>
                         <option value="full">Full Day</option>
@@ -115,7 +115,7 @@
                     <span class="font-semibold" x-text="filteredTours().length"></span> 
                     <span x-text="filteredTours().length === 1 ? 'tour' : 'tours'"></span> found
                 </p>
-                <select x-model="sortBy" @change="sortTours()" class="px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500">
+                <select x-model="sortBy" @change="sortTours()" class="px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none" style="focus:border-color: #d4af37;">
                     <option value="popularity">Most Popular</option>
                     <option value="price-low">Price: Low to High</option>
                     <option value="price-high">Price: High to Low</option>
@@ -131,16 +131,16 @@
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <template x-for="(tour, index) in filteredTours()" :key="tour.id">
-                    <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 hover-scale border-2 border-transparent hover:border-yellow-400"
+                    <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 hover-scale border-2 border-transparent" style="hover:border-color: #d4af37;"
                          data-aos="fade-up" 
                          :data-aos-delay="(index % 12) * 50">
                         <div class="relative cursor-pointer" @click="window.location.href = 'tour-' + tour.id + '.html'">
                             <img :src="tour.image" :alt="tour.name" class="w-full h-48 object-cover">
-                            <div class="absolute top-2 right-2 bg-yellow-500 text-gray-900 px-3 py-1 rounded-full font-bold text-sm">
+                            <div class="absolute top-2 right-2 px-3 py-1 rounded-full font-bold text-sm" style="background-color: #d4af37; color: #1a1629;">
                                 <span x-text="'€' + tour.price"></span>
                             </div>
                             <div class="absolute top-2 left-2 bg-white bg-opacity-90 px-3 py-1 rounded-full text-xs font-semibold flex items-center">
-                                <i class="fas fa-star text-yellow-500 mr-1"></i>
+                                <i class="fas fa-star mr-1" style="color: #d4af37;"></i>
                                 <span x-text="tour.averageRating"></span>
                                 <span class="text-gray-500 ml-1" x-text="'(' + tour.totalReviews + ')'"></span>
                             </div>
@@ -148,19 +148,19 @@
                         <div class="p-5">
                             <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2 cursor-pointer" @click="window.location.href = 'tour-' + tour.id + '.html'" x-text="tour.name"></h3>
                             <div class="flex items-center text-sm text-gray-600 mb-3">
-                                <i class="fas fa-clock mr-2 text-indigo-600"></i>
+                                <i class="fas fa-clock mr-2" style="color: #2d2640;"></i>
                                 <span x-text="tour.duration"></span>
                             </div>
                             <p class="text-gray-600 mb-4 text-sm line-clamp-3" x-text="tour.description"></p>
                             <div class="flex flex-col gap-2">
                                 <a :href="'booking.html?tour=' + tour.id" 
                                    @click.stop
-                                   class="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 text-gray-900 px-4 py-2 rounded-lg font-bold transition duration-200 shadow-md text-center">
+                                   class="w-full px-4 py-2 rounded-lg font-bold transition duration-200 shadow-md text-center" style="background: linear-gradient(135deg, #d4af37 0%, #c9a961 50%, #b8965f 100%); color: #1a1629;">
                                     <i class="fas fa-calendar-check mr-2"></i>Quick Book
                                 </a>
                                 <a :href="'tour-' + tour.id + '.html'" 
                                    @click.stop
-                                   class="w-full bg-white border-2 border-purple-600 text-purple-700 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition duration-200 text-center">
+                                   class="w-full bg-white border-2 px-4 py-2 rounded-lg font-semibold transition duration-200 text-center" style="border-color: #2d2640; color: #2d2640;" onmouseover="this.style.backgroundColor='#f5f0e8'" onmouseout="this.style.backgroundColor='white'">
                                     View Details →
                                 </a>
                             </div>
@@ -174,7 +174,7 @@
                 <i class="fas fa-search text-gray-400 text-6xl mb-4"></i>
                 <h3 class="text-2xl font-bold text-gray-700 mb-2">No tours found</h3>
                 <p class="text-gray-600 mb-6">Try adjusting your filters to see more results.</p>
-                <button @click="resetFilters()" class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition">
+                <button @click="resetFilters()" class="text-white px-6 py-3 rounded-full font-semibold transition" style="background-color: #2d2640;" onmouseover="this.style.backgroundColor='#3d2f52'" onmouseout="this.style.backgroundColor='#2d2640'">
                     Reset Filters
                 </button>
             </div>
@@ -200,7 +200,7 @@
                 <h4 class="text-white font-semibold mb-2">Quick Links</h4>
                 <ul class="space-y-1 text-sm">
                     <li><a href="about.html" class="hover:text-white">About</a></li>
-                    <li><a href="tours.html" class="text-indigo-400">Tours</a></li>
+                    <li><a href="tours.html" style="color: #d4af37;">Tours</a></li>
                     <li><a href="tickets.html" class="hover:text-white">Tickets</a></li>
                     <li><a href="contact.html" class="hover:text-white">Contact</a></li>
                 </ul>
@@ -210,7 +210,7 @@
                 <p class="text-gray-400 text-sm mb-2">Subscribe to receive updates and exclusive offers.</p>
                 <form class="flex flex-col sm:flex-row">
                     <input type="email" placeholder="Email address" required class="w-full p-2 rounded-md sm:rounded-l-md sm:rounded-r-none mb-2 sm:mb-0 text-gray-800 focus:outline-none" />
-                    <button type="submit" class="sm:ml-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md">Subscribe</button>
+                    <button type="submit" class="sm:ml-2 text-white px-4 py-2 rounded-md transition duration-200" style="background-color: #2d2640;" onmouseover="this.style.backgroundColor='#3d2f52'" onmouseout="this.style.backgroundColor='#2d2640'">Subscribe</button>
                 </form>
                 <div class="flex space-x-4 mt-4">
                     <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
@@ -368,17 +368,17 @@
             if (noResults) noResults.style.display = 'none';
             
             container.innerHTML = filtered.map((tour, index) => `
-              <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 hover-scale border-2 border-transparent hover:border-yellow-400"
+              <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 hover-scale border-2 border-transparent" style="transition: border-color 0.3s;"
                    data-tour-id="${tour.id}"
                    data-aos="fade-up" 
                    data-aos-delay="${(index % 12) * 50}">
                 <div class="relative cursor-pointer" onclick="window.location.href='tour-${tour.id}.html'">
                   <img src="${tour.image}" alt="${tour.name}" class="w-full h-48 object-cover">
-                  <div class="absolute top-2 right-2 bg-yellow-500 text-gray-900 px-3 py-1 rounded-full font-bold text-sm">
+                  <div class="absolute top-2 right-2 px-3 py-1 rounded-full font-bold text-sm" style="background-color: #d4af37; color: #1a1629;">
                     €${tour.price}
                   </div>
                   <div class="absolute top-2 left-2 bg-white bg-opacity-90 px-3 py-1 rounded-full text-xs font-semibold flex items-center">
-                    <i class="fas fa-star text-yellow-500 mr-1"></i>
+                    <i class="fas fa-star mr-1" style="color: #d4af37;"></i>
                     <span>${tour.averageRating}</span>
                     <span class="text-gray-500 ml-1">(${tour.totalReviews})</span>
                   </div>
@@ -386,19 +386,19 @@
                 <div class="p-5">
                   <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2 cursor-pointer" onclick="window.location.href='tour-${tour.id}.html'">${tour.name}</h3>
                   <div class="flex items-center text-sm text-gray-600 mb-3">
-                    <i class="fas fa-clock mr-2 text-indigo-600"></i>
+                    <i class="fas fa-clock mr-2" style="color: #2d2640;"></i>
                     <span>${tour.duration}</span>
                   </div>
                   <p class="text-gray-600 mb-4 text-sm line-clamp-3">${tour.description}</p>
                   <div class="flex flex-col gap-2">
                     <a href="booking.html?tour=${tour.id}" 
                        onclick="event.stopPropagation()"
-                       class="w-full bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 text-gray-900 px-4 py-2 rounded-lg font-bold transition duration-200 shadow-md text-center">
+                       class="w-full px-4 py-2 rounded-lg font-bold transition duration-200 shadow-md text-center" style="background: linear-gradient(135deg, #d4af37 0%, #c9a961 50%, #b8965f 100%); color: #1a1629;">
                       <i class="fas fa-calendar-check mr-2"></i>Quick Book
                     </a>
                     <a href="tour-${tour.id}.html" 
                        onclick="event.stopPropagation()"
-                       class="w-full bg-white border-2 border-purple-600 text-purple-700 px-4 py-2 rounded-lg font-semibold hover:bg-purple-50 transition duration-200 text-center">
+                       class="w-full bg-white border-2 px-4 py-2 rounded-lg font-semibold transition duration-200 text-center" style="border-color: #2d2640; color: #2d2640;">
                       View Details →
                     </a>
                   </div>
@@ -470,7 +470,7 @@
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-50 hidden flex-col md:flex-row items-center justify-between bg-gray-900 text-white p-4" style="display:none;">
         <p class="mb-2 md:mb-0 text-sm">We use cookies to improve your experience on our site. By continuing to browse, you accept our cookie policy.</p>
-        <button id="accept-cookies" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm">Accept</button>
+        <button id="accept-cookies" class="text-white px-4 py-2 rounded-md text-sm transition duration-200" style="background-color: #2d2640;" onmouseover="this.style.backgroundColor='#3d2f52'" onmouseout="this.style.backgroundColor='#2d2640'">Accept</button>
     </div>
 
     <script>
