@@ -13,6 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" defer></script>
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <!-- Tours Data -->
+    <script src="tours-data.js"></script>
 </head>
 <body class="font-sans text-gray-800">
     <!-- Navigation -->
@@ -42,106 +44,307 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-24 md:pt-32 bg-gray-100 py-12" data-aos="fade-down">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Tours</h1>
-            <p class="max-w-2xl mx-auto text-gray-600">Choose from our selection of premium tours that showcase the best of Rome and Italy.</p>
+    <section class="pt-24 md:pt-32 luxury-bg particles-bg" style="background-image: linear-gradient(135deg, rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.85)), url('img/rome-night.jpg'); background-size: cover; background-position: center;">
+        <div class="container mx-auto px-4 text-center py-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg" data-aos="fade-down">Discover Our Premium Tours</h1>
+            <p class="max-w-2xl mx-auto text-white text-opacity-90 text-lg mb-8" data-aos="fade-up">Choose from our selection of expertly curated tours showcasing the best of Rome and Italy. All tours include skip-the-line access and expert guides.</p>
         </div>
     </section>
 
-    <!-- Tours List -->
-    <section class="py-16 bg-white" data-aos="fade-up">
-        <div class="container mx-auto px-4 md:px-8 space-y-24">
-            <!-- Vatican Tour -->
-            <div id="vatican" class="grid md:grid-cols-2 gap-12 items-center">
-                <img src="img/sistine.jpg" alt="Vatican & Sistine Chapel" class="rounded-lg shadow-lg" data-aos="fade-right" data-aos-delay="100">
-                <div data-aos="fade-left" data-aos-delay="200">
-                    <h2 class="text-3xl font-bold mb-2">Vatican &amp; Sistine Chapel Tour</h2>
-                    <p class="text-gray-700 mb-4">Join our expert guide for an unforgettable tour of the Vatican Museums, Sistine Chapel, and St. Peter's Basilica. Enjoy skip-the-line entry and learn the fascinating history behind Michelangelo's masterpieces.</p>
-                    <p class="text-gray-600 mb-4">Duration: 3 hours</p>
-                    <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€99 per person</span></p>
-                    <a href="booking.html?tour=vatican" class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition duration-200">Book Now</a>
+    <!-- Search and Filter Section -->
+    <section class="py-8 bg-white shadow-md sticky top-16 z-10" x-data="toursPage()" data-aos="fade-down">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <!-- Search -->
+                <div class="md:col-span-2">
+                    <div class="relative">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        <input type="text" 
+                               x-model="filters.search" 
+                               @input="filterTours()"
+                               placeholder="Search tours..." 
+                               class="w-full pl-10 pr-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500" />
+                    </div>
                 </div>
-            </div>
-            <!-- Colosseum Tour -->
-            <div id="colosseum" class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
-                <img src="img/colosseum-day.jpg" alt="Colosseum & Ancient Rome" class="rounded-lg shadow-lg md:order-2" data-aos="fade-left" data-aos-delay="100">
-                <div data-aos="fade-right" data-aos-delay="200">
-                    <h2 class="text-3xl font-bold mb-2">Colosseum &amp; Ancient Rome</h2>
-                    <p class="text-gray-700 mb-4">Step back in time as you explore the Colosseum, Roman Forum, and Palatine Hill with a licensed guide. Skip the lines and hear stories of gladiators, emperors, and daily life in ancient Rome.</p>
-                    <p class="text-gray-600 mb-4">Duration: 3 hours</p>
-                    <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€85 per person</span></p>
-                    <a href="booking.html?tour=colosseum" class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition duration-200">Book Now</a>
-                </div>
-            </div>
-            <!-- City Highlights Tour -->
-            <div id="city" class="grid md:grid-cols-2 gap-12 items-center">
-                <img src="img/rome.jpg" alt="Rome City Highlights" class="rounded-lg shadow-lg" data-aos="fade-right" data-aos-delay="100">
-                <div data-aos="fade-left" data-aos-delay="200">
-                    <h2 class="text-3xl font-bold mb-2">Rome City Highlights</h2>
-                    <p class="text-gray-700 mb-4">Discover the highlights of the Eternal City, including the Trevi Fountain, Spanish Steps, Pantheon, and Piazza Navona. Perfect for first-time visitors wanting a comprehensive overview of Rome.</p>
-                    <p class="text-gray-600 mb-4">Duration: 4 hours</p>
-                    <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€75 per person</span></p>
-                    <a href="booking.html?tour=city" class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition duration-200">Book Now</a>
-                </div>
-            </div>
-            <!-- Tuscany Day Trip -->
-            <div id="tuscany" class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
-                <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=800&q=60" alt="Tuscany Day Trip" class="rounded-lg shadow-lg md:order-2">
+                <!-- Type Filter -->
                 <div>
-                    <h2 class="text-3xl font-bold mb-2">Tuscany Day Trip</h2>
-                    <p class="text-gray-700 mb-4">Escape to the rolling hills of Tuscany for a day of wine tasting, medieval towns, and breathtaking landscapes. Includes transportation from Rome and visits to several renowned wineries.</p>
-                    <p class="text-gray-600 mb-4">Duration: Full day</p>
-                    <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€150 per person</span></p>
-                    <a href="booking.html?tour=tuscany" class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition duration-200">Book Now</a>
+                    <select x-model="filters.type" @change="filterTours()" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500">
+                        <option value="">All Categories</option>
+                        <option value="vatican">Vatican</option>
+                        <option value="colosseum">Colosseum</option>
+                        <option value="city">City Tours</option>
+                        <option value="food">Food & Wine</option>
+                        <option value="daytrip">Day Trips</option>
+                    </select>
                 </div>
-            </div>
-            <!-- Food & Wine Tour -->
-            <div id="foodtour" class="grid md:grid-cols-2 gap-12 items-center">
-                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=60" alt="Rome Food & Wine Tour" class="rounded-lg shadow-lg" data-aos="fade-right" data-aos-delay="100">
-                <div data-aos="fade-left" data-aos-delay="200">
-                    <h2 class="text-3xl font-bold mb-2">Rome Food &amp; Wine Tour</h2>
-                    <p class="text-gray-700 mb-4">Taste authentic Roman cuisine and wines in historic neighborhoods with a local guide.</p>
-                    <p class="text-gray-600 mb-4">Duration: 4 hours</p>
-                    <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€95 per person</span></p>
-                    <a href="booking.html?tour=foodtour" class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition duration-200">Book Now</a>
-                </div>
-            </div>
-            <!-- Pompeii & Amalfi Coast -->
-            <div id="pompeii" class="grid md:grid-cols-2 gap-12 items-center">
-                <img src="https://images.unsplash.com/photo-1555992336-fb0d29498b13?auto=format&fit=crop&w=800&q=60" alt="Pompeii & Amalfi Coast" class="rounded-lg shadow-lg md:order-2">
+                <!-- Price Filter -->
                 <div>
-                    <h2 class="text-3xl font-bold mb-2">Pompeii &amp; Amalfi Coast</h2>
-                    <p class="text-gray-700 mb-4">Discover ancient Pompeii and the stunning Amalfi Coast on this memorable day trip.</p>
-                    <p class="text-gray-600 mb-4">Duration: Full day</p>
-                    <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€180 per person</span></p>
-                    <a href="booking.html?tour=pompeii" class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition duration-200">Book Now</a>
+                    <select x-model="filters.price" @change="filterTours()" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500">
+                        <option value="">All Prices</option>
+                        <option value="budget">Under €80</option>
+                        <option value="standard">€80 - €100</option>
+                        <option value="premium">Over €100</option>
+                    </select>
                 </div>
-            </div>
-            <!-- Underground Rome -->
-            <div id="underground" class="grid md:grid-cols-2 gap-12 items-center">
-                <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=60" alt="Underground Rome Tour" class="rounded-lg shadow-lg" data-aos="fade-right" data-aos-delay="100">
-                <div data-aos="fade-left" data-aos-delay="200">
-                    <h2 class="text-3xl font-bold mb-2">Underground Rome Tour</h2>
-                    <p class="text-gray-700 mb-4">Explore the hidden catacombs and underground ruins beneath Rome's streets.</p>
-                    <p class="text-gray-600 mb-4">Duration: 3 hours</p>
-                    <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€70 per person</span></p>
-                    <a href="booking.html?tour=underground" class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition duration-200">Book Now</a>
-                </div>
-            </div>
-            <!-- Borghese Gallery -->
-            <div id="borghese" class="grid md:grid-cols-2 gap-12 items-center">
-                <img src="https://images.unsplash.com/photo-1580974852861-c381510bc98a?auto=format&fit=crop&w=800&q=60" alt="Borghese Gallery Tour" class="rounded-lg shadow-lg md:order-2">
+                <!-- Duration Filter -->
                 <div>
-                    <h2 class="text-3xl font-bold mb-2">Borghese Gallery Tour</h2>
-                    <p class="text-gray-700 mb-4">Marvel at masterpieces by Bernini, Caravaggio, and Raphael in the stunning Borghese Gallery.</p>
-                    <p class="text-gray-600 mb-4">Duration: 2.5 hours</p>
-                    <p class="text-gray-600 mb-4">Price: <span class="text-indigo-600 font-semibold">€79 per person</span></p>
-                    <a href="booking.html?tour=borghese" class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition duration-200">Book Now</a>
+                    <select x-model="filters.duration" @change="filterTours()" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500">
+                        <option value="">All Durations</option>
+                        <option value="half">Half Day</option>
+                        <option value="full">Full Day</option>
+                    </select>
                 </div>
+            </div>
+            <div class="mt-4 flex justify-between items-center">
+                <p class="text-gray-600">
+                    <span class="font-semibold" x-text="filteredTours().length"></span> 
+                    <span x-text="filteredTours().length === 1 ? 'tour' : 'tours'"></span> found
+                </p>
+                <select x-model="sortBy" @change="sortTours()" class="px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500">
+                    <option value="popularity">Most Popular</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="duration">Duration</option>
+                    <option value="rating">Highest Rated</option>
+                </select>
             </div>
         </div>
     </section>
+
+    <!-- Tours Grid -->
+    <section class="py-16 bg-gray-50" x-data="toursPage()">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <template x-for="(tour, index) in filteredTours()" :key="tour.id">
+                    <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl overflow-hidden transition-all duration-300 hover-scale border-2 border-transparent hover:border-yellow-400 cursor-pointer"
+                         @click="selectedTour = tour"
+                         data-aos="fade-up" 
+                         :data-aos-delay="(index % 12) * 50">
+                        <div class="relative">
+                            <img :src="tour.image" :alt="tour.name" class="w-full h-48 object-cover">
+                            <div class="absolute top-2 right-2 bg-yellow-500 text-gray-900 px-3 py-1 rounded-full font-bold text-sm">
+                                <span x-text="'€' + tour.price"></span>
+                            </div>
+                            <div class="absolute top-2 left-2 bg-white bg-opacity-90 px-3 py-1 rounded-full text-xs font-semibold flex items-center">
+                                <i class="fas fa-star text-yellow-500 mr-1"></i>
+                                <span x-text="tour.averageRating"></span>
+                                <span class="text-gray-500 ml-1" x-text="'(' + tour.totalReviews + ')'"></span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2" x-text="tour.name"></h3>
+                            <div class="flex items-center text-sm text-gray-600 mb-3">
+                                <i class="fas fa-clock mr-2 text-indigo-600"></i>
+                                <span x-text="tour.duration"></span>
+                            </div>
+                            <p class="text-gray-600 mb-4 text-sm line-clamp-3" x-text="tour.description"></p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-indigo-600 font-bold text-lg" x-text="'€' + tour.price"></span>
+                                <button class="text-purple-700 font-semibold hover:text-yellow-600 transition text-sm">
+                                    View Details →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            
+            <!-- No Results Message -->
+            <div x-show="filteredTours().length === 0" class="text-center py-16">
+                <i class="fas fa-search text-gray-400 text-6xl mb-4"></i>
+                <h3 class="text-2xl font-bold text-gray-700 mb-2">No tours found</h3>
+                <p class="text-gray-600 mb-6">Try adjusting your filters to see more results.</p>
+                <button @click="resetFilters()" class="bg-indigo-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-indigo-700 transition">
+                    Reset Filters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Detail Modal -->
+    <div x-data="toursPage()" 
+         x-show="selectedTour" 
+         x-cloak
+         @click.self="selectedTour = null"
+         class="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4 overflow-y-auto"
+         style="display: none;">
+        <div class="bg-white rounded-lg max-w-5xl w-full max-h-screen overflow-y-auto" @click.stop>
+            <template x-if="selectedTour">
+                <div>
+                    <!-- Modal Header -->
+                    <div class="relative">
+                        <img :src="selectedTour.image" :alt="selectedTour.name" class="w-full h-64 md:h-96 object-cover">
+                        <button @click="selectedTour = null" class="absolute top-4 right-4 bg-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-100 transition shadow-lg">
+                            <i class="fas fa-times text-gray-700"></i>
+                        </button>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" x-text="selectedTour.name"></h2>
+                            <div class="flex items-center text-white space-x-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <span x-text="selectedTour.averageRating" class="font-semibold"></span>
+                                    <span class="ml-1" x-text="'(' + selectedTour.totalReviews + ' reviews)'"></span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-clock mr-1"></i>
+                                    <span x-text="selectedTour.duration"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Content -->
+                    <div class="p-6 md:p-8">
+                        <!-- Price and Booking -->
+                        <div class="bg-gradient-to-r from-yellow-50 to-purple-50 p-6 rounded-lg mb-8 border-2 border-yellow-400">
+                            <div class="flex flex-col md:flex-row justify-between items-center">
+                                <div class="mb-4 md:mb-0">
+                                    <p class="text-sm text-gray-600 mb-1">From</p>
+                                    <p class="text-4xl font-bold text-yellow-600" x-text="'€' + selectedTour.price"></p>
+                                    <p class="text-sm text-gray-600">per person</p>
+                                </div>
+                                <a :href="'booking.html?tour=' + selectedTour.id" 
+                                   class="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:from-yellow-500 hover:via-yellow-600 hover:to-yellow-700 text-gray-900 px-8 py-4 rounded-full text-lg font-bold transition duration-200 shadow-lg hover-scale">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Tour Info Grid -->
+                        <div class="grid md:grid-cols-3 gap-4 mb-8">
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                                <i class="fas fa-users text-indigo-600 text-2xl mr-3"></i>
+                                <div>
+                                    <p class="text-xs text-gray-600">Max Group Size</p>
+                                    <p class="font-semibold" x-text="selectedTour.maxGroupSize + ' people'"></p>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                                <i class="fas fa-chart-line text-indigo-600 text-2xl mr-3"></i>
+                                <div>
+                                    <p class="text-xs text-gray-600">Difficulty</p>
+                                    <p class="font-semibold" x-text="selectedTour.difficulty"></p>
+                                </div>
+                            </div>
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                                <i class="fas fa-calendar-check text-indigo-600 text-2xl mr-3"></i>
+                                <div>
+                                    <p class="text-xs text-gray-600">Availability</p>
+                                    <p class="font-semibold text-sm" x-text="selectedTour.availability"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-4">About This Tour</h3>
+                            <p class="text-gray-700 leading-relaxed mb-4" x-text="selectedTour.longDescription"></p>
+                        </div>
+
+                        <!-- Highlights -->
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-4">Highlights</h3>
+                            <ul class="grid md:grid-cols-2 gap-3">
+                                <template x-for="highlight in selectedTour.highlights" :key="highlight">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-green-500 mr-3 mt-1"></i>
+                                        <span class="text-gray-700" x-text="highlight"></span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+
+                        <!-- Itinerary -->
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-4">Itinerary</h3>
+                            <div class="space-y-4">
+                                <template x-for="(item, index) in selectedTour.itinerary" :key="index">
+                                    <div class="flex items-start">
+                                        <div class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0">
+                                            <span x-text="index + 1"></span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="font-semibold text-indigo-600" x-text="item.time"></p>
+                                            <p class="text-gray-700" x-text="item.activity"></p>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- What's Included / Not Included -->
+                        <div class="grid md:grid-cols-2 gap-8 mb-8">
+                            <div>
+                                <h3 class="text-xl font-bold mb-4 text-green-700">What's Included</h3>
+                                <ul class="space-y-2">
+                                    <template x-for="item in selectedTour.included" :key="item">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                            <span class="text-gray-700" x-text="item"></span>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-4 text-red-700">What's Not Included</h3>
+                                <ul class="space-y-2">
+                                    <template x-for="item in selectedTour.notIncluded" :key="item">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                            <span class="text-gray-700" x-text="item"></span>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Meeting Point -->
+                        <div class="mb-8 p-6 bg-blue-50 rounded-lg border-2 border-blue-200">
+                            <h3 class="text-xl font-bold mb-3 text-blue-900">Meeting Point</h3>
+                            <p class="text-gray-700 mb-2"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i><span x-text="selectedTour.meetingPoint"></span></p>
+                            <p class="text-gray-700"><i class="fas fa-clock text-blue-600 mr-2"></i><span x-text="'Meeting Time: ' + selectedTour.meetingTime"></span></p>
+                        </div>
+
+                        <!-- Reviews -->
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-bold mb-4">Recent Reviews</h3>
+                            <div class="space-y-4">
+                                <template x-for="review in selectedTour.reviews" :key="review.name">
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <div class="flex items-center">
+                                                <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold mr-3" x-text="review.name.split(' ').map(n => n[0]).join('')"></div>
+                                                <div>
+                                                    <p class="font-semibold" x-text="review.name"></p>
+                                                    <div class="text-yellow-500 text-sm" x-text="'★'.repeat(review.rating)"></div>
+                                                </div>
+                                            </div>
+                                            <span class="text-sm text-gray-500" x-text="review.date"></span>
+                                        </div>
+                                        <p class="text-gray-700 italic" x-text="review.comment"></p>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- Cancellation Policy -->
+                        <div class="bg-yellow-50 p-6 rounded-lg border-2 border-yellow-300">
+                            <h3 class="text-xl font-bold mb-3 text-yellow-900">Cancellation Policy</h3>
+                            <p class="text-gray-700" x-text="selectedTour.cancellationPolicy"></p>
+                        </div>
+
+                        <!-- Bottom Booking -->
+                        <div class="mt-8 text-center">
+                            <a :href="'booking.html?tour=' + selectedTour.id" 
+                               class="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-12 py-4 rounded-full text-lg font-bold transition duration-200 shadow-lg hover-scale">
+                                Book This Tour Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-10">
@@ -197,6 +400,79 @@
           banner.style.display = 'flex';
         }
       });
+
+      // Alpine.js component for tours page
+      function toursPage() {
+        return {
+          tours: [...TOURS_DATA],
+          filters: {
+            search: '',
+            type: '',
+            price: '',
+            duration: ''
+          },
+          sortBy: 'popularity',
+          selectedTour: null,
+          
+          init() {
+            // Check if there's a hash in the URL to open a specific tour
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+              const tour = this.tours.find(t => t.id === hash);
+              if (tour) {
+                this.selectedTour = tour;
+              }
+            }
+          },
+          
+          filteredTours() {
+            let filtered = this.tours.filter(tour => matchesTourFilters(tour, this.filters));
+            
+            // Apply sorting
+            switch (this.sortBy) {
+              case 'price-low':
+                filtered.sort((a, b) => a.price - b.price);
+                break;
+              case 'price-high':
+                filtered.sort((a, b) => b.price - a.price);
+                break;
+              case 'duration':
+                filtered.sort((a, b) => {
+                  if (a.durationCategory === b.durationCategory) return 0;
+                  return a.durationCategory === 'half' ? -1 : 1;
+                });
+                break;
+              case 'rating':
+                filtered.sort((a, b) => b.averageRating - a.averageRating);
+                break;
+              case 'popularity':
+              default:
+                filtered.sort((a, b) => b.totalReviews - a.totalReviews);
+                break;
+            }
+            
+            return filtered;
+          },
+          
+          filterTours() {
+            // Filtering happens automatically via filteredTours()
+          },
+          
+          sortTours() {
+            // Sorting happens automatically via filteredTours()
+          },
+          
+          resetFilters() {
+            this.filters = {
+              search: '',
+              type: '',
+              price: '',
+              duration: ''
+            };
+            this.sortBy = 'popularity';
+          }
+        }
+      }
     </script>
 
     <!-- Cookie Consent Banner -->
