@@ -4,6 +4,7 @@ const TOURS_DATA = [
     id: 'vatican', 
     name: 'Vatican & Sistine Chapel Tour',
     type: 'vatican', 
+    location: 'Rome',
     price: 99, 
     duration: '3 hours',
     durationCategory: 'half',
@@ -62,6 +63,7 @@ const TOURS_DATA = [
     id: 'colosseum', 
     name: 'Colosseum & Ancient Rome',
     type: 'colosseum', 
+    location: 'Rome',
     price: 85, 
     duration: '3 hours',
     durationCategory: 'half',
@@ -120,6 +122,9 @@ const TOURS_DATA = [
     id: 'city', 
     name: 'Rome City Highlights',
     type: 'city', 
+    location: 'Rome',
+    location: 'Rome',
+    location: 'Rome',
     price: 75, 
     duration: '4 hours',
     durationCategory: 'half',
@@ -178,6 +183,8 @@ const TOURS_DATA = [
     id: 'tuscany', 
     name: 'Tuscany Day Trip',
     type: 'daytrip', 
+    location: 'Florence',
+    location: 'Tuscany',
     price: 150, 
     duration: 'Full day',
     durationCategory: 'full',
@@ -239,6 +246,8 @@ const TOURS_DATA = [
     id: 'foodtour', 
     name: 'Rome Food & Wine Tour',
     type: 'food', 
+    location: 'Rome',
+    location: 'Rome',
     price: 95, 
     duration: '4 hours',
     durationCategory: 'half',
@@ -298,6 +307,7 @@ const TOURS_DATA = [
     id: 'pompeii', 
     name: 'Pompeii & Amalfi Coast',
     type: 'daytrip', 
+    location: 'Naples & Amalfi',
     price: 180, 
     duration: 'Full day',
     durationCategory: 'full',
@@ -359,6 +369,8 @@ const TOURS_DATA = [
     id: 'underground', 
     name: 'Underground Rome Tour',
     type: 'city', 
+    location: 'Rome',
+    location: 'Rome',
     price: 70, 
     duration: '3 hours',
     durationCategory: 'half',
@@ -412,6 +424,7 @@ const TOURS_DATA = [
     id: 'borghese', 
     name: 'Borghese Gallery Tour',
     type: 'city', 
+    location: 'Rome',
     price: 79, 
     duration: '2.5 hours',
     durationCategory: 'half',
@@ -591,6 +604,7 @@ const TOURS_DATA = [
     id: 'cooking-class', 
     name: 'Italian Cooking Class',
     type: 'food', 
+    location: 'Naples',
     price: 110, 
     duration: '4 hours',
     durationCategory: 'half',
@@ -653,6 +667,7 @@ const TOURS_DATA = [
     id: 'private-vatican', 
     name: 'Private Vatican VIP Tour',
     type: 'vatican', 
+    location: 'Rome',
     price: 199, 
     duration: '3 hours',
     durationCategory: 'half',
@@ -836,6 +851,7 @@ const TOURS_DATA = [
     id: 'naples-pizza', 
     name: 'Naples Pizza Making Tour',
     type: 'food', 
+    location: 'Rome',
     price: 125, 
     duration: 'Full day',
     durationCategory: 'full',
@@ -964,6 +980,22 @@ const TOURS_DATA = [
   }
 ];
 
+// Helpers for availability filtering
+function getAllowedDays(availabilityText = 'Daily') {
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const lower = availabilityText.toLowerCase();
+
+  if (lower.includes('daily except sunday')) return days.filter(day => day !== 'Sunday');
+  if (lower.includes('daily except tuesday')) return days.filter(day => day !== 'Tuesday');
+  if (lower.includes('daily except monday')) return days.filter(day => day !== 'Monday');
+  if (lower.includes('tuesday to sunday')) return days.filter(day => day !== 'Monday');
+  if (lower.includes('monday to saturday')) return days.filter(day => day !== 'Sunday');
+  if (lower.includes('daily')) return days;
+
+  const mentionedDays = days.filter(day => lower.includes(day.toLowerCase()));
+  return mentionedDays.length ? mentionedDays : days;
+}
+
 // Filter function - shared between pages
 function matchesTourFilters(tour, filters) {
   let matches = true;
@@ -979,6 +1011,11 @@ function matchesTourFilters(tour, filters) {
   // Type filter
   if (filters.type && tour.type !== filters.type) matches = false;
   
+  // Location filter
+  if (filters.location && tour.location && tour.location.toLowerCase() !== filters.location.toLowerCase()) {
+    matches = false;
+  }
+  
   // Price filter
   if (filters.price) {
     if (filters.price === 'budget' && tour.price >= 80) matches = false;
@@ -988,6 +1025,16 @@ function matchesTourFilters(tour, filters) {
   
   // Duration filter - use durationCategory for reliable filtering
   if (filters.duration && tour.durationCategory !== filters.duration) matches = false;
+
+  // Date availability filter
+  if (filters.date) {
+    const parsed = new Date(filters.date);
+    if (!isNaN(parsed)) {
+      const dayName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][parsed.getDay()];
+      const allowedDays = getAllowedDays(tour.availability);
+      if (!allowedDays.includes(dayName)) matches = false;
+    }
+  }
   
   return matches;
 }
