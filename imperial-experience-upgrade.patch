@@ -1,0 +1,228 @@
+*** Begin Patch
+*** Update File: tours-data.js
+@@ function matchesTourFilters(tour, filters) {
+-    if (filters.search && !(tour.name.toLowerCase().includes(filters.search.toLowerCase()) || tour.description.toLowerCase().includes(filters.search.toLowerCase()))) {
+-        return false;
+-    }
++    // Expand search to include long description, location and highlights for more relevant results.
++    if (filters.search) {
++        const searchText = filters.search.toLowerCase();
++        const searchFields = [
++            tour.name,
++            tour.description,
++            tour.longDescription || '',
++            tour.location || '',
++            (tour.highlights || []).join(' ')
++        ];
++        const match = searchFields.some(field => field.toLowerCase().includes(searchText));
++        if (!match) {
++            return false;
++        }
++    }
+*** End Patch
+
+*** Begin Patch
+*** Update File: styles.css
+@@
+-/* Gold utility classes */
+-.text-gold {
+-  color: #0ea5e9;
+-}
+-.bg-gold {
+-  background-color: #0ea5e9;
+-}
+-.border-gold {
+-  border-color: #0ea5e9;
+-}
++/* Luxury gold color palette */
++.text-gold {
++  color: #c8a165; /* warm gold tone */
++}
++.bg-gold {
++  background-color: #c8a165;
++}
++.border-gold {
++  border-color: #c8a165;
++}
+@@
+-.luxury-bg {
+-  background: linear-gradient(to right, #0f172a, #0ea5e9, #0ea5e9, #0f172a);
+-  background-size: 300% 300%;
+-  animation: gradient-animation 15s linear infinite;
+-}
+-.luxury-bg-gold {
+-  background: linear-gradient(to right, #0f172a, #0ea5e9, #0ea5e9, #0f172a);
+-  background-size: 400% 400%;
+-  animation: gradient-animation 20s linear infinite;
+-}
++/* Luxury gradient backgrounds now use rich navy and gold hues */
++.luxury-bg {
++  background: linear-gradient(to right, #0d0d0d, #1a1a2e, #0d0d0d);
++  background-size: 300% 300%;
++  animation: gradient-animation 20s linear infinite;
++}
++.luxury-bg-gold {
++  background: linear-gradient(to right, #0d0d0d, #c8a165, #0d0d0d);
++  background-size: 400% 400%;
++  animation: gradient-animation 25s linear infinite;
++}
+@@
+-body {
+-  @apply min-h-screen text-gray-100 leading-relaxed;
+-  background: linear-gradient(180deg, #0f172a, #172c47);
+-  background-attachment: fixed;
+-}
++@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap');
++
++body {
++  @apply min-h-screen leading-relaxed;
++  font-family: 'Montserrat', sans-serif;
++  background: linear-gradient(180deg, #0d0d0d, #1a1a2e);
++  background-attachment: fixed;
++  color: #f5f5f5;
++}
++
++/* Heading font utility */
++.heading-font {
++  font-family: 'Playfair Display', serif;
++}
+*** End Patch
+
+*** Begin Patch
+*** Update File: index.html
+@@ <head>
+-    <link href="styles.css" rel="stylesheet">
++    <link href="styles.css" rel="stylesheet">
++    <!-- Preconnect and fonts for improved performance and premium typography -->
++    <link rel="preconnect" href="https://fonts.googleapis.com">
++    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+@@
+-        <input type="text" id="date" x-model="selectedDate" class="mt-2 block w-full border border-gray-600 bg-gray-800 text-gray-100 rounded-md py-2 px-3"
+-            placeholder="Select date">
++        <input type="text" x-ref="dateInput" x-model="selectedDate" class="mt-2 block w-full border border-gray-600 bg-gray-800 text-gray-100 rounded-md py-2 px-3"
++            placeholder="Select date">
+@@
+-        flatpickr('#date', {
+-            dateFormat: "Y-m-d",
+-            minDate: "today"
+-        });
++        // Removed global flatpickr initialization. Calendar will be initialized within Alpine's init().
+@@
+-            return {
+-                selectedTour: tours[0],
+-                selectedDate: '',
+-                selectedGuests: 1,
+-                price: tours[0].price,
+-                init() {
+-                    // Initialize date picker
+-                    this.$nextTick(() => {
+-                        flatpickr('#date', {
+-                            dateFormat: "Y-m-d",
+-                            minDate: "today"
+-                        });
+-                    });
+-                },
+-                proceedToBooking() {
+-                    if (this.selectedDate === '') {
+-                        alert('Please select a date for your tour.');
+-                        return;
+-                    }
+-                    const tourId = this.selectedTour.id;
+-                    const url = `booking.html?id=${tourId}&date=${this.selectedDate}&guests=${this.selectedGuests}`;
+-                    window.location.href = url;
+-                }
+-            }
++            return {
++                selectedTour: tours[0],
++                selectedDate: '',
++                selectedGuests: 1,
++                price: tours[0].price,
++                fp: null,
++                init() {
++                    // Initialize flatpickr on the date input with dynamic disabling based on tour availability.
++                    this.fp = flatpickr(this.$refs.dateInput, {
++                        dateFormat: "Y-m-d",
++                        minDate: "today",
++                        disable: []
++                    });
++                    // update calendar on first load
++                    this.updateCalendar();
++                },
++                updateCalendar() {
++                    // Use getAllowedDays from tours data to compute allowed days for the selected tour
++                    const allowed = getAllowedDays(this.selectedTour.availability);
++                    // disable all days not in allowed array
++                    this.fp.set('disable', [
++                        function(date) {
++                            return !allowed.includes(date.getDay());
++                        }
++                    ]);
++                },
++                setTour(tour) {
++                    this.selectedTour = tour;
++                    this.price = tour.price;
++                    this.updateCalendar();
++                },
++                proceedToBooking() {
++                    if (this.selectedDate === '') {
++                        alert('Please select a date for your tour.');
++                        return;
++                    }
++                    const tourId = this.selectedTour.id;
++                    const url = `booking.html?id=${tourId}&date=${this.selectedDate}&guests=${this.selectedGuests}`;
++                    window.location.href = url;
++                }
++            }
+*** End Patch
+
+*** Begin Patch
+*** Update File: index.html
+@@
+-                            <li x-on:click="selectedTour = tour; price = tour.price" :class="{ 'border-blue-500': selectedTour.id === tour.id }" class="cursor-pointer px-4 py-2 border transition-colors hover:bg-gray-800">
++                            <li x-on:click="setTour(tour)" :class="{ 'border-gold': selectedTour.id === tour.id }" class="cursor-pointer px-4 py-2 border transition-colors hover:bg-gray-800">
+*** End Patch
+
+*** Begin Patch
+*** Update File: index.html
+@@ <section id="special-offers" class="relative py-16 luxury-bg text-white overflow-hidden">
+-                        <img src="images/special.jpg" alt="Special Offers" class="absolute inset-0 h-full w-full object-cover opacity-20">
++                        <img src="images/special.jpg" alt="Special Offers" loading="lazy" class="absolute inset-0 h-full w-full object-cover opacity-20">
+*** End Patch
+
+*** Begin Patch
+*** Update File: tours.html
+@@ <head>
+-    <link href="styles.css" rel="stylesheet">
++    <link href="styles.css" rel="stylesheet">
++    <!-- Preconnect and fonts for improved performance and premium typography -->
++    <link rel="preconnect" href="https://fonts.googleapis.com">
++    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+*** End Patch
+
+*** Begin Patch
+*** Update File: tours.html
+@@
+-                            <img :src="tour.image" alt="" class="h-40 w-full object-cover">
++                            <img :src="tour.image" alt="" loading="lazy" class="h-40 w-full object-cover">
+*** End Patch
+
+*** Begin Patch
+*** Update File: tours.html
+@@
+-            <img src="images/location-icon.png" alt="Location Icon" class="mr-3 h-6 w-6">
++            <img src="images/location-icon.png" alt="Location Icon" loading="lazy" class="mr-3 h-6 w-6">
+@@
+-            <img src="images/type-icon.png" alt="Type Icon" class="mr-3 h-6 w-6">
++            <img src="images/type-icon.png" alt="Type Icon" loading="lazy" class="mr-3 h-6 w-6">
+@@
+-            <img src="images/price-icon.png" alt="Price Icon" class="mr-3 h-6 w-6">
++            <img src="images/price-icon.png" alt="Price Icon" loading="lazy" class="mr-3 h-6 w-6">
+@@
+-            <img src="images/duration-icon.png" alt="Duration Icon" class="mr-3 h-6 w-6">
++            <img src="images/duration-icon.png" alt="Duration Icon" loading="lazy" class="mr-3 h-6 w-6">
+@@
+-            <img src="images/date-icon.png" alt="Date Icon" class="mr-3 h-6 w-6">
++            <img src="images/date-icon.png" alt="Date Icon" loading="lazy" class="mr-3 h-6 w-6">
+*** End Patch
